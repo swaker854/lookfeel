@@ -1,0 +1,375 @@
+<svg id="root" viewBox="0 0 1100 620" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+<defs>
+  <clipPath id="chartclip">
+    <rect x="68" y="96" width="782" height="412"/>
+  </clipPath>
+  <linearGradient id="a1"><stop offset="0%" stop-color="#00D4E8" stop-opacity="0.85"/></linearGradient>
+  <linearGradient id="a2"><stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.85"/></linearGradient>
+  <linearGradient id="a3"><stop offset="0%" stop-color="#00B87A" stop-opacity="0.85"/></linearGradient>
+  <linearGradient id="a4"><stop offset="0%" stop-color="#F59E0B" stop-opacity="0.85"/></linearGradient>
+  <linearGradient id="a5"><stop offset="0%" stop-color="#64748B" stop-opacity="0.85"/></linearGradient>
+  <linearGradient id="a1d"><stop offset="0%" stop-color="#22D3EE" stop-opacity="0.90"/></linearGradient>
+  <linearGradient id="a2d"><stop offset="0%" stop-color="#A78BFA" stop-opacity="0.90"/></linearGradient>
+  <linearGradient id="a3d"><stop offset="0%" stop-color="#10B981" stop-opacity="0.90"/></linearGradient>
+  <linearGradient id="a4d"><stop offset="0%" stop-color="#FBB724" stop-opacity="0.90"/></linearGradient>
+  <linearGradient id="a5d"><stop offset="0%" stop-color="#94A3B8" stop-opacity="0.90"/></linearGradient>
+  <linearGradient id="c1"><stop offset="0%" stop-color="#00D4E8"/></linearGradient>
+  <linearGradient id="c2"><stop offset="0%" stop-color="#8B5CF6"/></linearGradient>
+  <linearGradient id="c3"><stop offset="0%" stop-color="#00B87A"/></linearGradient>
+  <linearGradient id="c4"><stop offset="0%" stop-color="#F59E0B"/></linearGradient>
+  <linearGradient id="c5"><stop offset="0%" stop-color="#64748B"/></linearGradient>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+    .bg-main   { fill:#FFFBFE; filter:drop-shadow(0 1px 2px rgba(0,0,0,0.10)); }
+    .ct        { font-size:18px; font-weight:500; fill:#1C1B1F; letter-spacing:-0.2px; }
+    .cs        { font-size:11px; fill:#79747E; font-weight:400; }
+    .an        { font-size:10px; fill:#79747E; font-weight:400; }
+    .al        { font-size:10px; fill:#79747E; font-weight:500; }
+    .lt        { font-size:11px; fill:#1C1B1F; font-weight:400; }
+    .lv        { font-size:11px; fill:#1C1B1F; font-weight:500; }
+    .lp        { font-size:10px; fill:#79747E; font-weight:400; }
+    .gl        { stroke:#E7E0EC; stroke-width:1; }
+    .bl        { stroke:#79747E; stroke-width:1.5; }
+    .lgd-bg    { fill:#E7E0EC; stroke:#79747E; stroke-width:0.5; }
+    .lgd-div   { stroke:#79747E; stroke-width:0.5; opacity:0.3; }
+    .lgd-ttl   { font-size:10px; fill:#79747E; font-weight:500; letter-spacing:0.4px; }
+    .footer    { font-size:10px; fill:#79747E; font-weight:400; }
+    .t-wrap    { cursor:pointer; }
+    .t-track   { fill:#E7E0EC; }
+    .t-thumb   { fill:#ffffff; }
+    .t-label   { font-size:11px; font-weight:500; fill:#49454F; }
+    .pt-track  { fill:#E7E0EC; transition:fill 0.3s; }
+    .pt-thumb  { fill:#ffffff; }
+    .pt-label  { font-size:11px; font-weight:500; fill:#49454F; }
+    .lgd-val   { opacity:0; transition:opacity 0.2s; }
+    svg.print .lgd-val  { opacity:1; }
+    svg.print .pt-track { fill:#d97316; }
+    .crosshair { stroke:#79747E; stroke-width:1; stroke-dasharray:4,3; opacity:0; transition:opacity 0.15s; }
+    .tip       { opacity:0; pointer-events:none; transition:opacity 0.15s ease; }
+    svg.print .tip { opacity:0 !important; }
+    .bub-bg    { fill:#FFFBFE; }
+    .bub-bdr   { fill:none; stroke:#79747E; stroke-width:1; }
+    .bub-tip-p { fill:#FFFBFE; stroke:none; }
+    .bub-val   { fill:#1C1B1F; font-size:13px; font-weight:500; }
+    .bub-lbl   { fill:#49454F; font-size:10px; font-weight:400; }
+    .bub-div   { stroke:#79747E; stroke-width:0.5; opacity:0.3; }
+    @keyframes drawWave { from{stroke-dashoffset:var(--len,900);} to{stroke-dashoffset:0;} }
+    .wave-edge { stroke-dasharray:var(--len,900); stroke-dashoffset:var(--len,900);
+                 animation: drawWave 1.5s cubic-bezier(0.4,0,0.2,1) both; }
+    .w1{animation-delay:0.00s;} .w2{animation-delay:0.18s;}
+    .w3{animation-delay:0.34s;} .w4{animation-delay:0.50s;} .w5{animation-delay:0.66s;}
+    @keyframes washIn { from{opacity:0;} to{opacity:1;} }
+    .area-fill { animation: washIn 1.2s cubic-bezier(0.4,0,0.2,1) both; }
+    .f1{animation-delay:0.00s;} .f2{animation-delay:0.18s;}
+    .f3{animation-delay:0.34s;} .f4{animation-delay:0.50s;} .f5{animation-delay:0.66s;}
+    svg.dark .bg-main   { fill:#1C1B1F; filter:drop-shadow(0 1px 4px rgba(0,0,0,0.25)); }
+    svg.dark .ct        { fill:#E6E0E9; }
+    svg.dark .cs        { fill:#938F99; }
+    svg.dark .an        { fill:#938F99; }
+    svg.dark .al        { fill:#938F99; }
+    svg.dark .lt        { fill:#E6E0E9; }
+    svg.dark .lv        { fill:#E6E0E9; }
+    svg.dark .lp        { fill:#938F99; }
+    svg.dark .gl        { stroke:#49454F; }
+    svg.dark .bl        { stroke:#938F99; }
+    svg.dark .lgd-bg    { fill:#49454F; stroke:#938F99; }
+    svg.dark .lgd-div   { stroke:#938F99; }
+    svg.dark .lgd-ttl   { fill:#938F99; }
+    svg.dark .footer    { fill:#938F99; }
+    svg.dark .t-track   { fill:#49454F; }
+    svg.dark .t-label   { fill:#CAC4D0; }
+    svg.dark .pt-track  { fill:#49454F; }
+    svg.dark .pt-label  { fill:#CAC4D0; }
+    svg.dark.print .pt-track { fill:#d97316; }
+    svg.dark .crosshair { stroke:#938F99; }
+    svg.dark .bub-bg    { fill:#1C1B1F; }
+    svg.dark .bub-bdr   { fill:none; stroke:#938F99; stroke-width:1; }
+    svg.dark .bub-tip-p { fill:#1C1B1F; stroke:none; }
+    svg.dark .bub-val   { fill:#E6E0E9; }
+    svg.dark .bub-lbl   { fill:#CAC4D0; }
+    svg.dark .bub-div   { stroke:#938F99; }
+    .border-dark  { display:none; }
+    .border-light { display:block; }
+    svg.dark .border-dark  { display:block; }
+    svg.dark .border-light { display:none; }
+  </style>
+</defs>
+
+<rect class="bg-main" width="1100" height="620" rx="18"/>
+<g class="border-dark">
+  <rect x="0.75" y="0.75" width="1098.5" height="618.5" rx="17.5" fill="none" stroke="rgba(0,242,255,0.22)" stroke-width="1.5"/>
+</g>
+<g class="border-light">
+  <rect x="0.75" y="0.75" width="1098.5" height="618.5" rx="17.5" fill="none" stroke="rgba(0,0,0,0.10)" stroke-width="1.5"/>
+</g>
+
+<text x="68" y="50" class="ct">Revenue by Quarter</text>
+<text x="68" y="70" class="cs">5 product lines · stacked · wave edges</text>
+
+<g class="t-wrap" id="dark-toggle" transform="translate(930,52)">
+  <rect x="0" y="-13" width="68" height="26" rx="13" class="t-track"/>
+  <circle id="tthumb" cx="52" cy="0" r="10" class="t-thumb"/>
+  <text id="tlabel" x="44" y="4" class="t-label" text-anchor="middle">Light</text>
+</g>
+<g class="t-wrap" id="print-toggle" transform="translate(1012,52)">
+  <rect x="0" y="-13" width="68" height="26" rx="13" class="pt-track"/>
+  <circle id="pthumb" cx="16" cy="0" r="10" class="pt-thumb"/>
+  <text id="plabel" x="44" y="4" class="pt-label" text-anchor="middle">Print</text>
+</g>
+
+<line x1="68" y1="504" x2="850" y2="504" class="bl"/>
+<line x1="68" y1="423" x2="850" y2="423" class="gl"/>
+<line x1="68" y1="342" x2="850" y2="342" class="gl"/>
+<line x1="68" y1="261" x2="850" y2="261" class="gl"/>
+<line x1="68" y1="180" x2="850" y2="180" class="gl"/>
+<line x1="68" y1="100" x2="850" y2="100" class="gl"/>
+<line x1="68" y1="100" x2="68"  y2="504" class="bl"/>
+
+<text x="56" y="508" class="an" text-anchor="end">$0</text>
+<text x="56" y="427" class="an" text-anchor="end">$50M</text>
+<text x="56" y="346" class="an" text-anchor="end">$100M</text>
+<text x="56" y="265" class="an" text-anchor="end">$150M</text>
+<text x="56" y="184" class="an" text-anchor="end">$200M</text>
+<text x="56" y="104" class="an" text-anchor="end">$250M</text>
+
+<text x="68"  y="522" class="al" text-anchor="middle">Q1 &apos;22</text>
+<text x="180" y="522" class="al" text-anchor="middle">Q2 &apos;22</text>
+<text x="291" y="522" class="al" text-anchor="middle">Q3 &apos;22</text>
+<text x="403" y="522" class="al" text-anchor="middle">Q4 &apos;22</text>
+<text x="515" y="522" class="al" text-anchor="middle">Q1 &apos;23</text>
+<text x="627" y="522" class="al" text-anchor="middle">Q2 &apos;23</text>
+<text x="738" y="522" class="al" text-anchor="middle">Q3 &apos;23</text>
+<text x="850" y="522" class="al" text-anchor="middle">Q4 &apos;23</text>
+
+<line x1="459" y1="100" x2="459" y2="504" stroke="#c0b8a8" stroke-width="1" stroke-dasharray="5,4" opacity="0.6"/>
+<text x="263" y="90" class="an" text-anchor="middle">2022</text>
+<text x="654" y="90" class="an" text-anchor="middle">2023</text>
+
+<g clip-path="url(#chartclip)">
+<path class="area-fill f5" fill="url(#a5)"
+  d="M68,504 L68,487.8 C124,487.8 124,483.0 180,483.0 C235,483.0 235,486.2 291,486.2 C347,486.2 347,480.2 403,480.2 C459,480.2 459,483.0 515,483.0 C571,483.0 571,477.5 627,477.5 C682,477.5 682,480.2 738,480.2 C794,480.2 794,473.3 850,473.3 L850,504 Z"/>
+<path class="area-fill f4" fill="url(#a4)"
+  d="M68,487.8 C124,487.8 124,483.0 180,483.0 C235,483.0 235,486.2 291,486.2 C347,486.2 347,480.2 403,480.2 C459,480.2 459,483.0 515,483.0 C571,483.0 571,477.5 627,477.5 C682,477.5 682,480.2 738,480.2 C794,480.2 794,473.3 850,473.3 L850,437.7 C794,437.7 794,453.9 738,453.9 C682,453.9 682,444.2 627,444.2 C571,444.2 571,455.5 515,455.5 C459,455.5 459,457.1 403,457.1 C347,457.1 347,457.1 291,457.1 C235,457.1 235,459.3 180,459.3 C124,459.3 124,468.3 68,468.3 Z"/>
+<path class="area-fill f3" fill="url(#a3)"
+  d="M68,468.3 C124,468.3 124,459.3 180,459.3 C235,459.3 235,457.1 291,457.1 C347,457.1 347,457.1 403,457.1 C459,457.1 459,455.5 515,455.5 C571,455.5 571,444.2 627,444.2 C682,444.2 682,453.9 738,453.9 C794,453.9 794,437.7 850,437.7 L850,381.6 C794,381.6 794,403.8 738,403.8 C682,403.8 682,399.6 627,399.6 C571,399.6 571,415.3 515,415.3 C459,415.3 459,410.5 403,410.5 C347,410.5 347,416.9 291,416.9 C235,416.9 235,423.2 180,423.2 C124,423.2 124,439.4 68,439.4 Z"/>
+<path class="area-fill f2" fill="url(#a2)"
+  d="M68,439.4 C124,439.4 124,423.2 180,423.2 C235,423.2 235,416.9 291,416.9 C347,416.9 347,410.5 403,410.5 C459,410.5 459,415.3 515,415.3 C571,415.3 571,399.6 627,399.6 C682,399.6 682,403.8 738,403.8 C794,403.8 794,381.6 850,381.6 L850,281.4 C794,281.4 794,315.6 738,315.6 C682,315.6 682,320.2 627,320.2 C571,320.2 571,344.2 515,344.2 C459,344.2 459,346.4 403,346.4 C347,346.4 347,360.8 291,360.8 C235,360.8 235,373.9 180,373.9 C124,373.9 124,394.1 68,394.1 Z"/>
+<path class="area-fill f1" fill="url(#a1)"
+  d="M68,394.1 C124,394.1 124,373.9 180,373.9 C235,373.9 235,360.8 291,360.8 C347,360.8 347,346.4 403,346.4 C459,346.4 459,344.2 515,344.2 C571,344.2 571,320.2 627,320.2 C682,320.2 682,315.6 738,315.6 C794,315.6 794,281.4 850,281.4 L850,165.6 C794,165.6 794,205.0 738,205.0 C682,205.0 682,221.8 627,221.8 C571,221.8 571,261.2 515,261.2 C459,261.2 459,268.1 403,268.1 C347,268.1 347,294.1 291,294.1 C235,294.1 235,311.7 180,311.7 C124,311.7 124,342.4 68,342.4 Z"/>
+
+<path id="we5" class="wave-edge w5" fill="none"
+  stroke="#64748B" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="7,4" opacity="0.55"
+  d="M68,487.8 C124,487.8 124,483.0 180,483.0 C235,483.0 235,486.2 291,486.2 C347,486.2 347,480.2 403,480.2 C459,480.2 459,483.0 515,483.0 C571,483.0 571,477.5 627,477.5 C682,477.5 682,480.2 738,480.2 C794,480.2 794,473.3 850,473.3"/>
+<path id="we4" class="wave-edge w4" fill="none"
+  stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="0.72"
+  d="M68,468.3 C124,468.3 124,459.3 180,459.3 C235,459.3 235,457.1 291,457.1 C347,457.1 347,457.1 403,457.1 C459,457.1 459,455.5 515,455.5 C571,455.5 571,444.2 627,444.2 C682,444.2 682,453.9 738,453.9 C794,453.9 794,437.7 850,437.7"/>
+<path id="we3" class="wave-edge w3" fill="none"
+  stroke="#00B87A" stroke-width="2.5" stroke-linecap="round" opacity="0.82"
+  d="M68,439.4 C124,439.4 124,423.2 180,423.2 C235,423.2 235,416.9 291,416.9 C347,416.9 347,410.5 403,410.5 C459,410.5 459,415.3 515,415.3 C571,415.3 571,399.6 627,399.6 C682,399.6 682,403.8 738,403.8 C794,403.8 794,381.6 850,381.6"/>
+<path id="we2" class="wave-edge w2" fill="none"
+  stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" opacity="0.90"
+  d="M68,394.1 C124,394.1 124,373.9 180,373.9 C235,373.9 235,360.8 291,360.8 C347,360.8 347,346.4 403,346.4 C459,346.4 459,344.2 515,344.2 C571,344.2 571,320.2 627,320.2 C682,320.2 682,315.6 738,315.6 C794,315.6 794,281.4 850,281.4"/>
+<path id="we1" class="wave-edge w1" fill="none"
+  stroke="#00D4E8" stroke-width="3.5" stroke-linecap="round" opacity="1"
+  d="M68,342.4 C124,342.4 124,311.7 180,311.7 C235,311.7 235,294.1 291,294.1 C347,294.1 347,268.1 403,268.1 C459,268.1 459,261.2 515,261.2 C571,261.2 571,221.8 627,221.8 C682,221.8 682,205.0 738,205.0 C794,205.0 794,165.6 850,165.6"/>
+</g>
+
+<g id="crosshairs">
+  <line id="ch0" class="crosshair" x1="68"  y1="100" x2="68"  y2="504"/>
+  <line id="ch1" class="crosshair" x1="180" y1="100" x2="180" y2="504"/>
+  <line id="ch2" class="crosshair" x1="291" y1="100" x2="291" y2="504"/>
+  <line id="ch3" class="crosshair" x1="403" y1="100" x2="403" y2="504"/>
+  <line id="ch4" class="crosshair" x1="515" y1="100" x2="515" y2="504"/>
+  <line id="ch5" class="crosshair" x1="627" y1="100" x2="627" y2="504"/>
+  <line id="ch6" class="crosshair" x1="738" y1="100" x2="738" y2="504"/>
+  <line id="ch7" class="crosshair" x1="850" y1="100" x2="850" y2="504"/>
+</g>
+<g id="hit-layer"></g>
+<g id="tip-layer"></g>
+
+<rect x="870" y="100" width="210" height="310" rx="14" class="lgd-bg" stroke-width="1"/>
+<text x="888" y="124" class="lgd-ttl">SERIES</text>
+<g transform="translate(888,140)">
+  <rect x="0" y="0" width="14" height="14" rx="3" fill="url(#c1)"/>
+  <text x="22" y="11" class="lt">Cyan</text>
+  <text x="188" y="11" class="lv lgd-val" text-anchor="end">$72M</text>
+</g>
+<g transform="translate(888,170)">
+  <rect x="0" y="0" width="14" height="14" rx="3" fill="url(#c2)"/>
+  <text x="22" y="11" class="lt">Violet</text>
+  <text x="188" y="11" class="lv lgd-val" text-anchor="end">$62M</text>
+</g>
+<g transform="translate(888,200)">
+  <rect x="0" y="0" width="14" height="14" rx="3" fill="url(#c3)"/>
+  <text x="22" y="11" class="lt">Emerald</text>
+  <text x="188" y="11" class="lv lgd-val" text-anchor="end">$35M</text>
+</g>
+<g transform="translate(888,230)">
+  <rect x="0" y="0" width="14" height="14" rx="3" fill="url(#c4)"/>
+  <text x="22" y="11" class="lt">Amber</text>
+  <text x="188" y="11" class="lv lgd-val" text-anchor="end">$22M</text>
+</g>
+<g transform="translate(888,260)">
+  <rect x="0" y="0" width="14" height="14" rx="3" fill="url(#c5)"/>
+  <text x="22" y="11" class="lt">Slate</text>
+  <text x="188" y="11" class="lv lgd-val" text-anchor="end">$19M</text>
+</g>
+<line x1="888" y1="290" x2="1062" y2="290" class="lgd-div"/>
+<text x="888" y="352" class="lt">Q4 2023 total</text>
+<text x="888" y="370" class="lv lgd-val">$210M</text>
+<text x="888" y="388" class="lp">Hover columns to inspect</text>
+
+<text x="68" y="600" class="footer">Revenue by Quarter · 5 series · stacked area chart</text>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+  var svg = document.getElementById('root');
+  var ns  = 'http://www.w3.org/2000/svg';
+
+  var series = [
+    { label:'Cyan',    light:'#00D4E8', dark:'#22D3EE', vals:[38,42,46,50,55,60,66,72] },
+    { label:'Violet',  light:'#8B5CF6', dark:'#A78BFA', vals:[32,35,38,41,45,50,56,62] },
+    { label:'Emerald', light:'#00B87A', dark:'#10B981', vals:[18,20,21,23,25,27,31,35] },
+    { label:'Amber',   light:'#F59E0B', dark:'#FBB724', vals:[11,12,13,14,15,17,19,22] },
+    { label:'Slate',   light:'#64748B', dark:'#94A3B8', vals:[10,11,12,13,14,16,17,19] },
+  ];
+
+  var quarters = ["Q1 '22","Q2 '22","Q3 '22","Q4 '22","Q1 '23","Q2 '23","Q3 '23","Q4 '23"];
+  var xs   = [68,180,291,403,515,627,738,850];
+  var colW = 56;
+
+  var totals = xs.map(function(_,qi){
+    return series.reduce(function(s,sr){ return s + sr.vals[qi]; }, 0);
+  });
+
+  function swapAreaFills(dark) {
+    svg.querySelectorAll('path[fill]').forEach(function(p) {
+      var f = p.getAttribute('fill') || '';
+      var m = f.match(/url\(#(a[1-5])(d?)\)/);
+      if (!m) return;
+      p.setAttribute('fill', dark ? 'url(#' + m[1] + 'd)' : 'url(#' + m[1] + ')');
+    });
+  }
+
+  function swapEdgeStrokes(dark) {
+    [1,2,3,4,5].forEach(function(i) {
+      var e = document.getElementById('we' + i);
+      if (!e) return;
+      e.setAttribute('stroke', dark ? series[i-1].dark : series[i-1].light);
+    });
+  }
+
+  function setMode(wantDark) {
+    var currently = svg.classList.contains('dark');
+    if (wantDark === currently) return;
+    var thumb = document.getElementById('tthumb');
+    var lbl   = document.getElementById('tlabel');
+    if (wantDark) {
+      svg.classList.add('dark');
+      if (thumb) thumb.setAttribute('cx', '52');
+      if (lbl)   lbl.textContent = 'Light';
+    } else {
+      svg.classList.remove('dark');
+      if (thumb) thumb.setAttribute('cx', '16');
+      if (lbl)   lbl.textContent = 'Dark';
+    }
+    swapAreaFills(wantDark);
+    swapEdgeStrokes(wantDark);
+  }
+
+  document.getElementById('dark-toggle').addEventListener('click', function() {
+    setMode(!svg.classList.contains('dark'));
+  });
+  document.getElementById('print-toggle').addEventListener('click', function() {
+    var thumb = document.getElementById('pthumb'), lbl = document.getElementById('plabel');
+    if (svg.classList.toggle('print')) { thumb.setAttribute('cx','52'); lbl.textContent='Screen'; }
+    else                               { thumb.setAttribute('cx','16'); lbl.textContent='Print';  }
+  });
+
+  var hitLayer = document.getElementById('hit-layer');
+  var tipLayer = document.getElementById('tip-layer');
+  var allTips  = {};
+
+  function el(tag, attrs) {
+    var e = document.createElementNS(ns, tag);
+    Object.keys(attrs).forEach(function(k){ e.setAttribute(k, attrs[k]); });
+    return e;
+  }
+
+  xs.forEach(function(x, qi) {
+    var bw = 168, bh = 146, hw = bw / 2;
+    var bCx = x, bCy = 200;
+    if (bCx - hw < 68)  bCx = 68 + hw;
+    if (bCx + hw > 850) bCx = 850 - hw;
+
+    var tipG = el('g', { 'class':'tip', id:'tip_'+qi });
+    tipLayer.appendChild(tipG);
+    allTips[qi] = tipG;
+
+    /* No filter — flat design */
+    tipG.appendChild(el('rect', { x:bCx-hw, y:bCy-12, width:bw, height:bh+12, rx:10, 'class':'bub-bg' }));
+    tipG.appendChild(el('rect', { x:bCx-hw, y:bCy-12, width:bw, height:bh+12, rx:10, 'class':'bub-bdr' }));
+
+    var qLbl = el('text', { x:bCx, y:bCy+5, 'text-anchor':'middle',
+      'dominant-baseline':'central', 'class':'bub-lbl' });
+    qLbl.textContent = quarters[qi];
+    tipG.appendChild(qLbl);
+
+    tipG.appendChild(el('line', { x1:bCx-hw+8, y1:bCy+15, x2:bCx+hw-8, y2:bCy+15, 'class':'bub-div' }));
+
+    series.forEach(function(s, si) {
+      var rowY = bCy + 28 + si * 18;
+      tipG.appendChild(el('circle', { cx:bCx-hw+14, cy:rowY, r:4, fill:s.light }));
+      var sLbl = el('text', { x:bCx-hw+24, y:rowY, 'dominant-baseline':'central', 'class':'bub-lbl' });
+      sLbl.textContent = s.label;
+      tipG.appendChild(sLbl);
+      var sVal = el('text', { x:bCx+hw-8, y:rowY, 'text-anchor':'end',
+        'dominant-baseline':'central', 'class':'bub-val', 'font-size':'11' });
+      sVal.textContent = '$'+s.vals[qi]+'M';
+      tipG.appendChild(sVal);
+    });
+
+    tipG.appendChild(el('line', { x1:bCx-hw+8, y1:bCy+118, x2:bCx+hw-8, y2:bCy+118, 'class':'bub-div' }));
+    var totLbl = el('text', { x:bCx-hw+8, y:bCy+130, 'dominant-baseline':'central', 'class':'bub-lbl' });
+    totLbl.textContent = 'Total';
+    tipG.appendChild(totLbl);
+    var totVal = el('text', { x:bCx+hw-8, y:bCy+130, 'text-anchor':'end',
+      'dominant-baseline':'central', 'class':'bub-val' });
+    totVal.textContent = '$'+totals[qi]+'M';
+    tipG.appendChild(totVal);
+
+    var hx1 = Math.max(68,  x - colW);
+    var hx2 = Math.min(850, x + colW);
+    var hit = el('rect', { x:hx1, y:100, width:hx2-hx1, height:404,
+      fill:'transparent', cursor:'crosshair', id:'hit'+qi });
+    hitLayer.appendChild(hit);
+
+    var ch = document.getElementById('ch' + qi);
+    hit.addEventListener('mouseenter', function() {
+      allTips[qi].style.opacity = '1';
+      if (ch) ch.style.opacity = '1';
+    });
+    hit.addEventListener('mouseleave', function() {
+      allTips[qi].style.opacity = '';
+      if (ch) ch.style.opacity = '';
+    });
+  });
+
+  /* theme param handled below */
+
+  window.setMode = setMode;
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'setMode') setMode(e.data.dark);
+  });
+
+  /* ── URL param: ?theme=dark|light sets initial mode ── */
+  (function() {
+    var href = window.location.href;
+    setMode(href.indexOf('theme=dark') !== -1);
+  })();
+
+})();
+//]]>
+</script>
+</svg>
