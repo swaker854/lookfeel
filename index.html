@@ -8,27 +8,44 @@
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 100px;
+      
+      /* Added Side Padding & Centering */
+      padding: 0 10%;           /* 10% space on left and right */
+      max-width: 900px;         /* Limits width on large screens */
+      margin-left: auto;        /* Centers the container */
+      margin-right: auto;       /* Centers the container */
+      line-height: 1.6;         /* Bonus: adds a bit of space between lines for readability */
     }
+    
     a {
-      display: block;
-      margin: 20px;
+      display: inline-block;    /* Changed to inline-block so it's not a full-width bar */
+      margin: 10px 20px;
       font-size: 20px;
       text-decoration: none;
       color: #0366d6;
     }
+
+    h2 {
+      margin-top: 40px;         /* Adds a bit of space above section headers */
+    }
   </style>
 </head>
 <body>
-  <h1>There two styles presetned here</h1>
-  Both styles includes micro animation on load and hover animation to show label & value. You can switch dark/light mode on individual chart with the toggle. 
-  The "print" toggle is mean to show what a printable version is like which mainly put values in legend
+  <h1>There are two styles presented here</h1>
+  <p>
+    Both styles include micro-animation on load and hover animation to show label & value. 
+    You can switch dark/light mode on individual charts with the toggle. 
+    The "print" toggle is meant to show what a printable version is like, which mainly puts values in the legend.
+  </p>
+
   <h2>Flat</h2>
-  This flat update is mainly color palette and some minor features like round bars in bar chart
+  <p>This flat update is mainly a color palette and some minor features like round bars in bar charts.</p>
   <a href="flat/portal-light.html">Flat Light Portal</a>
   <a href="flat/portal-dark.html">Flat Dark Portal</a>
+
   <h2>Warm Flat</h2>
-  This is toned down version of Liquid Glass to improve readibility. It uses gradient and showdow that reflect a light source from the top. The effect is more pronouced in dark mode. It's much closer to flat and Claude described it as "warm flat"
-   <a href="warmFlat/portal-light.html">Warm Flat Light Portal</a>
+  <p>This is a toned-down version of Liquid Glass to improve readability. It uses gradients and shadows that reflect a light source from the top. The effect is more pronounced in dark mode. It's much closer to flat, and Claude described it as "warm flat."</p>
+  <a href="warmFlat/portal-light.html">Warm Flat Light Portal</a>
   <a href="warmFlat/portal-dark.html">Warm Flat Dark Portal</a>
 
 </body>
