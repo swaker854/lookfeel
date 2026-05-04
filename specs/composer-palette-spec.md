@@ -24,6 +24,7 @@ StyleBI should use three palette layers:
 The Composer palette should:
 
 - inherit shell surfaces, neutrals, typography, borders, radius, and focus treatment
+- inherit shell semantic families for standard success, warning, danger, and info meaning
 - reuse shell primary for routine actions and key emphasis
 - add only the extra state language needed for authoring
 - remain quieter than the visualization palette
@@ -95,6 +96,8 @@ This vocabulary should be shared across Composer modes as much as possible.
 
 Composer should not redefine shell foundations unless the meaning is different.
 
+Where Composer introduces alias tokens for values that already exist in shell, those aliases should resolve to the shell palette values rather than introducing a second near-match.
+
 Use shell tokens first for:
 
 - canvas and background surfaces
@@ -105,6 +108,13 @@ Use shell tokens first for:
 - routine button, tab, dialog, and form styling
 
 Composer-specific tokens should be added only for authoring-state meaning that shell does not already express.
+
+## Shell Alignment Rules
+
+- Shared Composer chrome should consume the shell palette directly for `surface-canvas`, `surface-default`, `surface-subtle`, `surface-hover`, `border-default`, `border-strong`, `text-strong`, `text-default`, `text-muted`, and `text-subtle`.
+- Composer routine actions should use the shell primary family as defined in [shell-palette-spec.md](E:\home\dev\github\lookfeel\specs\shell-palette-spec.md).
+- Composer should keep using shell semantic tokens for standard success, warning, danger, and info meaning instead of creating parallel Composer semantic families.
+- Composer should not introduce additional routine accent families that compete with shell primary inside shared chrome.
 
 ### Context Family
 
@@ -133,10 +143,10 @@ This family should stay aligned with shell primary and should be introduced only
 
 | Token | Value | Use |
 |---|---|---|
-| `--inet-composer-primary-accent` | `#EEA555` | key authoring affordance |
-| `--inet-composer-primary-hover` | `#C47E1E` | primary hover state |
-| `--inet-composer-primary-text` | `#3D1E00` | text on primary surfaces |
-| `--inet-composer-primary-soft` | `#FDECD0` | soft primary background |
+| `--inet-composer-primary-accent` | `#E58A2A` | key authoring affordance; alias shell `primary` |
+| `--inet-composer-primary-hover` | `#C96F12` | primary hover state; alias shell `primary-hover` |
+| `--inet-composer-primary-text` | `#4A2500` | text on primary surfaces; alias shell `primary-text` |
+| `--inet-composer-primary-soft` | `#F6E2C8` | soft primary background; alias shell `primary-soft` |
 
 ### Dimmed / Inactive Family
 
@@ -198,7 +208,7 @@ Worksheet-specific tokens are only needed where authoring meaning is more specif
 |---|---|---|
 | `--inet-ws-schema-connected-bg` | `#E2F3E8` | connected schema column |
 | `--inet-ws-schema-compatible-bg` | `#DDF1F5` | compatible schema column |
-| `--inet-ws-schema-incompatible-bg` | `#FDECD0` | incompatible schema column |
+| `--inet-ws-schema-incompatible-bg` | `#F6E2C8` | incompatible schema column |
 | `--inet-ws-schema-highlight-bg` | `#F7F3EA` | hover or highlight surface |
 
 ### Connections
@@ -245,5 +255,6 @@ The shared Composer palette should do most of the work, with worksheet-specific 
 ## Related Specs
 
 - [theme-strategy-overview.md](E:\home\dev\github\lookfeel\theme-strategy-overview.md)
+- [shell-palette-spec.md](E:\home\dev\github\lookfeel\specs\shell-palette-spec.md)
 - [shell-design-spec.md](E:\home\dev\github\lookfeel\shell-design-spec.md)
 - [composer-implementation-roadmap.md](E:\home\dev\github\lookfeel\composer-implementation-roadmap.md)

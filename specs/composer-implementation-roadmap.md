@@ -15,6 +15,8 @@ It is intended to answer:
 
 This roadmap assumes the shell token and shared-shell adoption work are already underway or complete. It should not be used to replace the shell roadmap.
 
+Use [composer-design-spec.md](E:\home\dev\github\lookfeel\specs\composer-design-spec.md) for Composer layer behavior, surface rules, and state-usage boundaries.
+
 ## Shell Prerequisite
 
 This roadmap covers:
@@ -37,6 +39,7 @@ For shell-first implementation work such as buttons, inputs, dialogs, nav, tabs,
 
 - [theme-strategy-overview.md](E:\home\dev\github\lookfeel\theme-strategy-overview.md)
 - [shell-design-spec.md](E:\home\dev\github\lookfeel\shell-design-spec.md)
+- [composer-design-spec.md](E:\home\dev\github\lookfeel\specs\composer-design-spec.md)
 - [shell-implementation-roadmap.md](E:\home\dev\github\lookfeel\shell-implementation-roadmap.md)
 - [composer-palette-spec.md](E:\home\dev\github\lookfeel\composer-palette-spec.md)
 
@@ -48,6 +51,8 @@ Use three change types throughout this roadmap:
   - define or refine runtime `--inet-composer-*` variables and narrower retained worksheet aliases
 - `adoption`
   - update selectors so Composer surfaces consume shell and Composer tokens consistently
+- `exposure`
+  - add new Composer-facing runtime tokens to the theme editor model when customer override is required
 - `containment`
   - keep worksheet-only states narrow so they do not leak back into shared Composer chrome or shell chrome
 
@@ -56,6 +61,7 @@ Use three change types throughout this roadmap:
 Unless otherwise noted:
 
 - shared shell values come from [shell-design-spec.md](E:\home\dev\github\lookfeel\shell-design-spec.md) and [shell-implementation-roadmap.md](E:\home\dev\github\lookfeel\shell-implementation-roadmap.md)
+- Composer behavior and state-usage rules come from [composer-design-spec.md](E:\home\dev\github\lookfeel\specs\composer-design-spec.md)
 - Composer state values come from [composer-palette-spec.md](E:\home\dev\github\lookfeel\composer-palette-spec.md)
 
 Inline `Default / alias` values in this roadmap are meant to make implementation self-sufficient. When a row needs special clarification, the source should be called out explicitly in that row or subsection.
@@ -80,6 +86,12 @@ Use this sequence:
 2. adopt that token in [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1) or, where needed, [_bootstrap-override.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_bootstrap-override.scss:1)
 3. keep old token names working where customer themes may already reference them
 
+### Theme editor model note
+
+The list of variables surfaced in the theme editor is driven by `ThemeCssVariableModel[]`.
+
+When a new Composer token is intended to be customer-themeable, it must also be added there.
+
 ### Themeability boundary
 
 Composer work should avoid redefining shell foundations when a shell token already expresses the correct meaning.
@@ -99,87 +111,20 @@ Do not add Composer-specific replacements for:
 | [web/projects/portal/src/scss/_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1) | adopt shell and Composer tokens in shared Composer chrome, worksheet panes, graph states, viewsheet editing states, and related utilities |
 | [web/projects/portal/src/scss/_bootstrap-override.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_bootstrap-override.scss:1) | preserve shell-driven Bootstrap-shaped controls used inside Composer dialogs, forms, tabs, and toolbars |
 | shared Composer templates and components in `web/projects/portal/src/app` | targeted follow-up only when shared SCSS adoption is not enough |
+| theme editor model in EM | expose new themeable `--inet-*` Composer variables when customer control is required |
 
 ## Composer Surface Implementation Map
 
-This section is the practical per-surface guide for Composer implementation work.
+Use [composer-design-spec.md](E:\home\dev\github\lookfeel\specs\composer-design-spec.md) for the surface model and state-distribution rules.
 
-It is reference material for implementation planning, not a separate pre-phase of work.
+This roadmap keeps only the implementation-facing mapping:
 
-Each surface block combines:
+- shared Composer chrome work is primarily in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1), [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1), and [_bootstrap-override.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_bootstrap-override.scss:1)
+- shared authoring-state rollout is primarily in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) and [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1)
+- worksheet extension containment is primarily in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) and [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1)
+- viewsheet and wizard adoption primarily reuses the shared authoring-state rollout rather than introducing separate token systems
 
-- where the shared code already lives
-- a short implementation summary
-- a pointer to detailed appendix deltas when available
-
-### Shared Composer Chrome
-
-Shared code:
-
-- Composer surface hooks already live in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) through `--inet-composer-main-panel-bg-color`, `--inet-composer-side-panel-bg-color`, and `--inet-composer-navbar-*`
-- shared Composer chrome adoption already lives across [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1) and [_bootstrap-override.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_bootstrap-override.scss:1)
-
-Implementation summary:
-
-- keep shared Composer toolbars, side panes, pane tabs, dialogs, forms, and button patterns shell-driven first
-- retune legacy Composer navbar hover and background hooks so they align with shell subtle-surface rules instead of secondary-accent behavior
-- do not use Composer context, selected, or worksheet colors in generic chrome selectors
-
-Detailed implementation deltas:
-
-- for implementation-ready token and selector changes, use `Appendix A: Shared Composer Chrome`
-
-### Shared Authoring States
-
-Shared code:
-
-- current stateful helpers and selected utilities already live in [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1), including selected-border and selected-background helpers
-- existing graph and assembly state hooks already live in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1)
-
-Implementation summary:
-
-- introduce a small shared Composer state grammar through `context`, `selected`, `primary`, and `dimmed` aliases
-- reinterpret existing generic selected-state hooks where they represent authoring selection rather than shell list selection
-- adopt the shared Composer state model in worksheet, viewsheet, and wizard surfaces where the UI is expressing authoring meaning rather than ordinary shell hierarchy
-
-Detailed implementation deltas:
-
-- for implementation-ready token and selector changes, use `Appendix B: Shared Authoring States`
-
-### Worksheet Schema And Graph States
-
-Shared code:
-
-- worksheet graph, connection, and schema hooks already live in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) through `--inet-graph-*`, `--inet-schema-*`, and `--inet-ws-*`
-- worksheet adoption already fans out through [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1)
-
-Implementation summary:
-
-- keep graph connection, schema compatibility, and worksheet detail-row states narrower than the shared Composer state grammar
-- remap legacy worksheet tokens to the newer Composer palette intent where possible, but do not force graph-specific meaning into shared Composer tokens
-- contain worksheet state usage so those colors do not leak into side panes, dialogs, or generic shell controls
-
-Detailed implementation deltas:
-
-- for implementation-ready token and selector changes, use `Appendix C: Worksheet Extensions`
-
-### Viewsheet And Wizard Authoring Surfaces
-
-Shared code:
-
-- viewsheet and wizard authoring surfaces primarily consume shared shell and themeable utility layers today
-- related chrome and form controls still flow through [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1) and [_bootstrap-override.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_bootstrap-override.scss:1)
-
-Implementation summary:
-
-- viewsheet and wizard should use the shared Composer state grammar more narrowly than worksheet
-- selected edit targets should use the Composer selected family
-- helper or related-state emphasis can use Composer context family sparingly
-- standard dialogs, tabs, and inputs inside those flows should remain shell-driven unless they represent authoring state directly
-
-Detailed implementation deltas:
-
-- for implementation-ready state adoption guidance, use `Appendix D: Viewsheet And Wizard State Adoption`
+Like the shell implementation, Composer work should include screen-by-screen review after major shared phases land. Shared token and selector adoption will not catch every legacy Bootstrap-era treatment, worksheet-local override, or authoring-specific leakage point on its own.
 
 ## Current Code Touchpoints
 
@@ -230,6 +175,7 @@ Keep Composer work layered on top of shell work instead of reopening shell decis
 - identify which selectors are truly shared authoring chrome versus worksheet-only
 - identify any active user-owned SCSS changes in the same files before editing
 - freeze the first implementation slice to shared Composer adoption in `portal`
+- plan a screen-by-screen audit pass after shared chrome adoption and again after shared authoring-state adoption
 
 ### Output
 
@@ -296,10 +242,10 @@ Define in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\we
 
 | Token | Action | Before | After | Notes |
 |---|---|---|---|---|
-| `--inet-composer-primary-accent` | add | missing | `#EEA555` | key authoring affordance |
-| `--inet-composer-primary-hover` | add | missing | `#C47E1E` | authoring hover state |
-| `--inet-composer-primary-text` | add | missing | `#3D1E00` | text on Composer primary surfaces |
-| `--inet-composer-primary-soft` | add | missing | `#FDECD0` | soft primary authoring surface |
+| `--inet-composer-primary-accent` | add | missing | `#E58A2A` | key authoring affordance; alias shell primary |
+| `--inet-composer-primary-hover` | add | missing | `#C96F12` | authoring hover state; alias shell primary-hover |
+| `--inet-composer-primary-text` | add | missing | `#4A2500` | text on Composer primary surfaces; alias shell primary-text |
+| `--inet-composer-primary-soft` | add | missing | `#F6E2C8` | soft primary authoring surface; alias shell primary-soft |
 
 #### 4. Shared Composer dimmed family
 
@@ -329,7 +275,7 @@ Define or refine in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\
 | `--inet-schema-connection-color` | update | legacy gray | `#BDBDBD` | schema editor connection line |
 | `--inet-schema-column-connected-bg-color` | update | `var(--inet-fourth-color)` | `#E2F3E8` | connected schema state |
 | `--inet-schema-column-compatible-bg-color` | update | `var(--inet-secondary-color-light)` | `#DDF1F5` | compatible schema state aligns with Composer selected family tone |
-| `--inet-schema-column-incompatible-bg-color` | update | legacy primary-light mapping | `#FDECD0` | incompatible schema state uses warm authoring emphasis rather than shell warning |
+| `--inet-schema-column-incompatible-bg-color` | update | legacy primary-light mapping | `#F6E2C8` | incompatible schema state uses warm authoring emphasis rather than shell warning |
 | `--inet-ws-table-odd-row-bg-color` | update | `#fff` | `#FFFFFF` | normalize explicit row token |
 | `--inet-ws-table-even-row-bg-color` | update | `#f2f2f2` | `#F7F6F2` | softer worksheet row alternation |
 
@@ -484,7 +430,7 @@ Map schema compatibility, graph connection, and detail-row states to retained wo
 | graph warning connection selectors | `stroke` / line color | keep/update | current warning connection hooks | `var(--inet-graph-connection-warning-color)` | worksheet-only warning connection meaning |
 | schema connection selectors | `stroke` / line color | keep/update | current schema connection hook | `var(--inet-schema-connection-color)` | separate from general selected or context borders |
 | worksheet detail-row odd/even selectors | `background-color` | keep/update | current row tokens | `var(--inet-ws-table-odd-row-bg-color)` and `var(--inet-ws-table-even-row-bg-color)` | keep worksheet row rhythm narrow to detail tables |
-| worksheet detail-row selected selectors | `background-color` | add/update | mixed selected-item or table-selected behavior | dedicated worksheet selected row token or mapped Composer selected tone | do not reuse shell table selected state blindly |
+| worksheet detail-row selected selectors | `background-color` | add/update | mixed selected-item or table-selected behavior | `var(--inet-ws-row-selected-bg)` | use the dedicated worksheet selected-row token from the Composer palette spec; do not reuse shell table selected state |
 
 #### 2. Important boundary
 
@@ -507,18 +453,19 @@ Worksheet-specific states should stay inside:
 
 - worksheet remains expressive without fragmenting the broader Composer palette
 
-## Phase 5: Themeability Review
+## Phase 5: Themeability And Exposure Review
 
 ### Goal
 
-Confirm the new Composer token layer remains runtime-themeable and backward-compatible enough for existing themes.
+Confirm the new Composer token layer remains runtime-themeable and backward-compatible enough for existing themes, and expose the right Composer tokens for customer override.
 
 ### Tasks
 
 - verify all new shared Composer tokens are defined as runtime `--inet-*` variables
 - verify legacy Composer and worksheet hooks still resolve to reasonable values after retuning
 - avoid deleting old token names in the same pass
-- review whether any new Composer tokens need exposure in the theme editor model once shell exposure work is stable
+- add any customer-themeable Composer tokens to `ThemeCssVariableModel[]`
+- verify exposed Composer tokens are named and grouped clearly enough for customer theming
 
 ### New Composer tokens to review for exposure
 
@@ -578,6 +525,19 @@ Confirm the new Composer token layer remains runtime-themeable and backward-comp
 - worksheet-specific states remain narrower than the overall Composer palette
 - viewsheet and wizard use fewer Composer states than worksheet rather than inventing parallel color systems
 
+### Screen-By-Screen Audit
+
+After major shared Composer phases land, conduct a screen-by-screen review of representative authoring surfaces.
+
+The goal is to catch:
+
+- legacy Bootstrap visual treatments still leaking into Composer screens
+- one-off worksheet, viewsheet, or wizard overrides that bypass the shared Composer and shell token layers
+- shell chrome inside Composer that still carries old accent behavior or older Bootstrap defaults
+- authoring-state drift where selected, context, primary, or dimmed usage is inconsistent in real screens
+
+Treat this audit as part of the implementation method, not as optional polish.
+
 ## Deferred Work
 
 These should not block the first Composer implementation phase:
@@ -587,6 +547,7 @@ These should not block the first Composer implementation phase:
 - visualization widget internals
 - exhaustive cleanup of all legacy worksheet naming in one pass
 - broad EM alignment
+- exhaustive screen-by-screen cleanup before shared token and selector phases land
 
 ## Recommended First Sprint
 
@@ -597,6 +558,8 @@ If Composer implementation begins after shell stabilization, the best first spri
 3. Phase 3 shared authoring-state adoption
 
 That gives a clear layered model before doing narrower worksheet follow-up.
+
+Immediately after that sprint, run a screen-by-screen audit across worksheet, viewsheet, wizard, and shared Composer chrome to identify lingering Bootstrap leakage and local overrides that need targeted cleanup.
 
 ## Appendix: Detailed Implementation Deltas
 
@@ -631,17 +594,17 @@ This appendix makes the Composer roadmap implementation-ready by turning design 
 
 | Token | Action | Before | After | Notes |
 |---|---|---|---|---|
-| `--inet-composer-context-bg` | add | missing | `#FEF8EE` | related/in-focus state |
+| `--inet-composer-context-bg` | add | missing | `#FEF8EE` | related or in-focus authoring state |
 | `--inet-composer-context-border` | add | missing | `#F3DFC2` | contextual border |
 | `--inet-composer-context-text` | add | missing | `#8C5510` | contextual text |
 | `--inet-composer-selected-bg` | add | missing | `#DDF1F5` | explicit authoring selection |
 | `--inet-composer-selected-border` | add | missing | `#BFDDE5` | selected border |
 | `--inet-composer-selected-text` | add | missing | `#123C44` | selected text |
 | `--inet-composer-selected-ring` | add | missing | `rgba(167, 215, 227, 0.35)` | selected halo |
-| `--inet-composer-primary-accent` | add | missing | `#EEA555` | key authoring emphasis |
-| `--inet-composer-primary-hover` | add | missing | `#C47E1E` | key authoring hover |
-| `--inet-composer-primary-text` | add | missing | `#3D1E00` | text on soft primary |
-| `--inet-composer-primary-soft` | add | missing | `#FDECD0` | soft primary authoring fill |
+| `--inet-composer-primary-accent` | add | missing | `#E58A2A` | key authoring emphasis; alias shell primary |
+| `--inet-composer-primary-hover` | add | missing | `#C96F12` | key authoring hover; alias shell primary-hover |
+| `--inet-composer-primary-text` | add | missing | `#4A2500` | text on soft primary; alias shell primary-text |
+| `--inet-composer-primary-soft` | add | missing | `#F6E2C8` | soft primary authoring fill; alias shell primary-soft |
 | `--inet-composer-dimmed-bg` | add | missing | `#FBFAF7` | dimmed surface |
 | `--inet-composer-dimmed-border` | add | missing | `#E6E2D9` | dimmed border |
 | `--inet-composer-dimmed-text` | add | missing | `#B8B3AA` | dimmed text |
@@ -650,15 +613,16 @@ This appendix makes the Composer roadmap implementation-ready by turning design 
 
 | Selector | Property | Action | Before | After | Notes |
 |---|---|---|---|---|---|
-| `.bg-selected` in authoring-state usage | `background-color` | update | `var(--inet-shell-selected-bg-color)` | `var(--inet-composer-selected-bg)` | keep shell selected state elsewhere |
-| `.bd-selected`, `.bd-selected-*`, `.bt-selected`, `.bb-selected`, `.bl-selected`, `.br-selected` in authoring-state usage | border color | update | `var(--inet-selected-item-bg-color)` | `var(--inet-composer-selected-border)` | reinterpret only in authoring contexts |
+| `.bg-selected` in authoring-state usage | `background-color` | update | `var(--inet-shell-selected-bg-color)` | `var(--inet-composer-selected-bg)` | reinterpret only where usage is true authoring selection |
+| `.bd-selected`, `.bd-selected-*`, `.bt-selected`, `.bb-selected`, `.bl-selected`, `.br-selected` in authoring-state usage | border color | update | `var(--inet-selected-item-bg-color)` | `var(--inet-composer-selected-border)` | preserve shell selection elsewhere |
 | selected authoring targets | `color` | add/update | inherited or mixed | `var(--inet-composer-selected-text)` | explicit selected text |
-| selected authoring targets needing halo | `box-shadow` | add | missing | `0 0 0 2px var(--inet-composer-selected-ring)` | use sparingly |
-| contextual authoring surfaces | `background-color` | add/update | mixed warm fills | `var(--inet-composer-context-bg)` | related state, not selection |
-| contextual authoring surfaces | `border-color` | add/update | mixed or missing | `var(--inet-composer-context-border)` | contextual border |
-| contextual authoring surfaces | `color` | add/update | inherited or mixed | `var(--inet-composer-context-text)` | contextual text |
-| key authoring emphasis surfaces | `background-color` | add/update | mixed | `var(--inet-composer-primary-soft)` or `var(--inet-composer-primary-accent)` | do not replace shell primary buttons |
-| key authoring emphasis surfaces | `color` | add/update | mixed | `var(--inet-composer-primary-text)` | readable authoring emphasis text |
+| selected authoring targets needing stronger emphasis | `box-shadow` | add | missing or mixed | `0 0 0 2px var(--inet-composer-selected-ring)` | use only where fill and border are not enough |
+| contextual authoring surfaces | `background-color` | add/update | mixed hover or legacy warm fills | `var(--inet-composer-context-bg)` | context is not selection |
+| contextual authoring surfaces | `border-color` | add/update | mixed or missing | `var(--inet-composer-context-border)` | contextual containment |
+| contextual authoring surfaces | `color` | add/update | inherited or mixed | `var(--inet-composer-context-text)` | contextual text emphasis |
+| key authoring affordances inside editor surfaces | `background-color` | add/update | mixed shell primary or worksheet-specific warm fills | `var(--inet-composer-primary-soft)` or `var(--inet-composer-primary-accent)` | do not replace standard shell primary buttons |
+| key authoring affordances inside editor surfaces | `color` | add/update | mixed | `var(--inet-composer-primary-text)` | text on soft primary surfaces |
+| key authoring affordances inside editor surfaces `:hover` | hover tone | add/update | mixed | `var(--inet-composer-primary-hover)` where needed | keep hover aligned with Composer primary aliasing |
 | dimmed authoring surfaces | `background-color` | add/update | mixed pale neutrals | `var(--inet-composer-dimmed-bg)` | inactive state |
 | dimmed authoring surfaces | `border-color` | add/update | mixed | `var(--inet-composer-dimmed-border)` | inactive border |
 | dimmed authoring surfaces | `color` | add/update | mixed | `var(--inet-composer-dimmed-text)` | inactive text |
@@ -677,7 +641,7 @@ This appendix makes the Composer roadmap implementation-ready by turning design 
 | `--inet-schema-connection-color` | update | legacy gray | `#BDBDBD` | schema connection |
 | `--inet-schema-column-connected-bg-color` | update | `var(--inet-fourth-color)` | `#E2F3E8` | connected schema state |
 | `--inet-schema-column-compatible-bg-color` | update | `var(--inet-secondary-color-light)` | `#DDF1F5` | compatible schema state |
-| `--inet-schema-column-incompatible-bg-color` | update | legacy primary-light mapping | `#FDECD0` | incompatible schema state |
+| `--inet-schema-column-incompatible-bg-color` | update | legacy primary-light mapping | `#F6E2C8` | incompatible schema state |
 | `--inet-ws-table-odd-row-bg-color` | update | `#fff` | `#FFFFFF` | normalize explicit odd row token |
 | `--inet-ws-table-even-row-bg-color` | update | `#f2f2f2` | `#F7F6F2` | soften even row token |
 
@@ -694,61 +658,11 @@ This appendix makes the Composer roadmap implementation-ready by turning design 
 | schema compatibility selectors | `background-color` | keep/update | current schema background hooks | current schema background hooks | values retuned; usage remains worksheet-only |
 | worksheet detail row selectors | `background-color` | keep/update | current row hooks | current row hooks | keep row state local to worksheet tables |
 
-### Appendix D: Viewsheet And Wizard State Adoption
+## Appendix D: Surface Guidance Reference
 
-#### State application guidance
+Use [composer-design-spec.md](E:\home\dev\github\lookfeel\specs\composer-design-spec.md) for:
 
-| Surface | State family to prefer | Notes |
-|---|---|---|
-| viewsheet selected objects and handles | Composer selected | explicit active edit target |
-| viewsheet related helpers or soft edit context | Composer context | use sparingly |
-| viewsheet unavailable objects | Composer dimmed | do not use worksheet-only tokens |
-| wizard chosen items and active preview targets | Composer selected | authoring choice state |
-| wizard recommendation or key guided action emphasis | Composer primary | use narrower than worksheet |
-| wizard helper preview framing | Composer context or shell subtle | choose Composer context only when meaning is related/in-focus |
-| shared wizard forms, tabs, dialogs, and buttons | shell | remain shell-driven unless directly carrying authoring state |
-
-## Appendix E: UI Impact Analysis
-
-This appendix maps the roadmap back to the current `stylebi` portal codebase so implementation can distinguish broad shared Composer changes from narrower worksheet containment work.
-
-### Highest-risk shared changes
-
-| Area | Why risk is high | Primary implementation files | Major UI areas affected |
-|---|---|---|---|
-| shared selected-state reinterpretation | existing selected helpers are broad and may serve both shell and authoring use cases | [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1), [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) | worksheet selection, viewsheet edit targets, possibly shell-selected utility usage |
-| Composer navbar and tab-rail retuning | existing Composer navbar hover state inherits secondary accent behavior | [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:197), [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1) | Composer bottom tabs, pane nav, authoring tab rails |
-| shared authoring-state rollout | context, selected, dimmed, and primary need to read consistently across multiple modes | [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1), [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) | worksheet, viewsheet, wizard |
-| worksheet containment work | worksheet state tokens are already broad and can easily leak into shared chrome | [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:212), [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1) | graph assemblies, schema compatibility, detail rows, worksheet panes |
-
-### Impact by phase
-
-| Phase | Primary files | UI impact surface | Risk level | What to watch |
-|---|---|---|---|---|
-| Phase 1 Composer token alignment | [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) | Composer chrome aliases and authoring-state token surface | medium-high | token overlap, legacy theme compatibility, accidental shell duplication |
-| Phase 2 shared Composer chrome adoption | [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1), [_bootstrap-override.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_bootstrap-override.scss:1) | tabs, side panes, slide-outs, shared authoring chrome | high | Composer chrome drifting away from shell structure |
-| Phase 3 shared authoring-state adoption | [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1) | worksheet, viewsheet, wizard edit states | highest | context vs selected confusion, overuse of authoring colors |
-| Phase 4 worksheet containment | [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:1), [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) | schema, graph, detail rows | high | worksheet colors leaking into shared chrome or non-worksheet modes |
-| Phase 5 themeability review | [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:1) | customer theme compatibility | medium | broken legacy overrides, missing runtime alias coverage |
-
-### Concrete high-use UI touchpoints
-
-| Touchpoint | Evidence in codebase | Why it matters |
-|---|---|---|
-| Composer navbar and bottom-tab surfaces | existing Composer navbar token hooks in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:197) and shared tab adoption in shell/themeable layers | chrome alignment issues will be immediately visible in authoring workflows |
-| selected-state utility classes | `.bg-selected` and `.bd-selected*` helpers already exist in [_themeable.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_themeable.scss:241) | reinterpreting these helpers affects multiple authoring surfaces at once |
-| graph assembly selected state | `--inet-graph-assembly-header-selected-*` hooks already exist in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:215) | worksheet authoring selection is a high-visibility Composer state |
-| schema compatibility states | `--inet-schema-column-*` hooks already exist in [_variables.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_variables.scss:221) | compatibility meaning must stay clear and local to worksheet |
-| shared dialogs and forms inside Composer | shared controls still flow through [_bootstrap-override.scss](E:\home\dev\github\stylebi-visual_BI_tool\stylebi\web\projects\portal\src\scss\_bootstrap-override.scss:108) and modal selectors there | easy place to accidentally fork shell styles when Composer work starts |
-
-### Recommended regression sweep
-
-After implementation, visually verify at minimum:
-
-- one worksheet graph editing screen with selected and related nodes
-- one worksheet schema compatibility flow
-- one worksheet detail table using odd/even and selected row states
-- one viewsheet authoring surface with selected objects
-- one wizard flow with chosen-item and recommendation states
-- one Composer side pane and bottom-tab surface
-- one Composer dialog or property form to confirm shell inheritance is still intact
+- viewsheet and wizard state distribution guidance
+- shared chrome boundaries
+- worksheet extension boundaries
+- cross-surface state-usage rules

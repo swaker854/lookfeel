@@ -206,6 +206,7 @@ The target product experience should read as:
 
 - [shell-design-spec.md](E:\home\dev\github\lookfeel\shell-design-spec.md)
 - [shell-implementation-roadmap.md](E:\home\dev\github\lookfeel\shell-implementation-roadmap.md)
+- [composer-design-spec.md](E:\home\dev\github\lookfeel\specs\composer-design-spec.md)
 - [composer-palette-spec.md](E:\home\dev\github\lookfeel\composer-palette-spec.md)
 - [composer-implementation-roadmap.md](E:\home\dev\github\lookfeel\composer-implementation-roadmap.md)
 - [visualization-design-spec.md](E:\home\dev\github\lookfeel\visualization-design-spec.md)

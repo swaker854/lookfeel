@@ -124,7 +124,21 @@ The current token system ties default and secondary button tokens directly to th
 
 ### Recommendation
 
-Introduce neutral control tokens and map default/secondary controls to them.
+Introduce neutral control tokens and map routine non-primary controls to them.
+
+Use two neutral control behaviors:
+
+- `default` should be a ghost control
+  - transparent at rest
+  - neutral text/icon color
+  - hover fill only
+  - no persistent border unless a specific product area needs a stronger local affordance
+- `secondary` should be the neutral outline control
+  - transparent or quiet neutral fill at rest
+  - neutral border
+  - neutral hover fill
+
+This preserves a single-accent shell model similar to Figma-style product chrome, where one primary CTA carries routine emphasis and other actions stay structurally quiet.
 
 ### Recommended neutral control tokens
 
@@ -231,10 +245,10 @@ These are the most important behavior changes.
 | `--inet-button-secondary-hover-border-color` | `--inet-secondary-color-dark` | redefine | `--inet-ui-neutral-border-color` | neutral hover border |
 | `--inet-button-default-bg-color` | transparent | keep/redefine | transparent | remain ghost-like |
 | `--inet-button-default-text-color` | `--inet-secondary-color` | redefine | `--inet-ui-neutral-color` | neutral default control |
-| `--inet-button-default-border-color` | `--inet-secondary-color` | redefine | `--inet-ui-neutral-border-color` | neutral default border |
+| `--inet-button-default-border-color` | `--inet-secondary-color` | redefine | `transparent` | default stays ghost at rest |
 | `--inet-button-default-hover-bg-color` | `--inet-secondary-color` | redefine | `--inet-ui-neutral-hover-bg-color` | neutral hover background |
 | `--inet-button-default-hover-text-color` | `--inet-secondary-color-light` | redefine | `--inet-ui-neutral-hover-color` | neutral hover text |
-| `--inet-button-default-hover-border-color` | `--inet-secondary-color` | redefine | `--inet-ui-neutral-border-color` | neutral hover border |
+| `--inet-button-default-hover-border-color` | `--inet-secondary-color` | redefine | `transparent` | hover relies on fill and text, not outline |
 
 ### Existing Tokens That Should Mostly Stay Semantic
 

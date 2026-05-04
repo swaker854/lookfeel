@@ -14,6 +14,8 @@ It is intended to answer:
 
 This roadmap is `portal`-first, not `portal`-only. `em` alignment should be handled in a later dedicated alignment phase.
 
+In practice, successful shell implementation also requires screen-by-screen review after shared token and selector work lands. Shared adoption catches most modernization work, but legacy Bootstrap-era styling leakage and one-off local overrides still need targeted cleanup when they surface in real screens.
+
 ## Composer Boundary
 
 This roadmap covers:
@@ -121,6 +123,8 @@ Each widget block combines:
 - where the shared code already lives
 - a short implementation summary
 - a pointer to detailed appendix deltas when available
+
+Implementation should not stop at shared selector updates alone. After each major shared change lands, run a screen-by-screen review of the most affected surfaces to catch legacy Bootstrap treatments, one-off component overrides, and selectors that bypass the shared shell token layer.
 
 ### Buttons
 
@@ -234,6 +238,7 @@ Confirm that the widget map and first-pass shell scope are stable enough to exec
   - nav/tab neutralization
 - Confirm the `Widget Implementation Map` is settled enough for this first pass and that no additional shell changes are expected to join it before implementation starts.
 - Identify any active user-owned SCSS changes in the same files before editing.
+- Plan a screen-by-screen audit pass after each major shared phase to catch Bootstrap leakage, hardcoded local overrides, and shared surfaces that are not yet consuming the intended shell selectors.
 
 ### Output
 
@@ -817,6 +822,19 @@ Ensure new shell tokens can be overridden through StyleBI's built-in theme syste
 - orange is the only routine accent
 - Composer authoring states and visualization surfaces still remain visually distinct
 
+### Screen-By-Screen Audit
+
+After the major shared phases land, conduct a screen-by-screen review of representative `portal` surfaces.
+
+The goal is to catch:
+
+- legacy Bootstrap visual treatments that still leak through
+- one-off component SCSS that overrides the shared shell layer
+- local geometry or spacing assumptions that regress after shared token updates
+- surfaces that should have inherited the shell selectors but are still bypassing them
+
+Treat findings from this audit as expected implementation follow-up, not as evidence that the shared-token strategy was wrong.
+
 ## Deferred Work
 
 These should not block the first shell implementation phase:
@@ -1072,3 +1090,4 @@ After implementation, visually verify at minimum:
 - one binding editor pane with dense form controls
 - one Composer bottom-tab surface
 - one shell list or light table using shared `list-group-item` or Bootstrap table selectors
+- any screens where legacy Bootstrap component styling is known to have lingered historically
