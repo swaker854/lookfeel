@@ -1,0 +1,23 @@
+ Figma's approach is more disciplined than it first looks. They don't use 4 accents interchangeably — each color has a fixed home and only appears there. That keeps the canvas calm even though the palette is wider.
+
+Here's how I'd adapt that for StyleBI:
+
+The discipline that makes it work
+Two layers:
+
+Action layer — orange. Universal, always means "do this." Never replaced.
+Identity layer — per-destination accent. Each top-level area gets one. Appears only in that area's decorative imagery.
+Where the identity color may appear:
+
+The destination's icon in the rail (active state)
+Empty-state illustrations / thumbnail accents (template stripes, pattern-tile mark)
+Maybe a thin top-edge stripe on section headers within that area
+Where it never appears:
+
+Home (Home is the system view — orange-only)
+Body chrome, cards, borders, hover states across destinations (those stay neutral)
+Any CTA button (CTAs are always orange)
+Any text run (color is for marks, not type)
+
+The Figma test
+In Figma you can scan a page and tell which area you're in by glancing at one mark — usually the rail icon. The chrome stays gray. We'd want the same: someone screenshotting our Dashboards page sees one indigo mark; on Data, one teal mark. Otherwise neutral.

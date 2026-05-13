@@ -1,0 +1,97 @@
+STACKED PR WORKFLOW (FORK + UPSTREAM)
+
+SETUP
+
+- upstream = original repo (source of truth)
+- origin = your fork (where your branches live)
+- base branch = upstream/epic-74519
+
+---
+
+STEP 1 — CREATE FIRST STAGE
+
+git fetch upstream
+git checkout -b stage-1 upstream/epic-74519
+git push -u origin stage-1
+
+CREATE PR:
+origin:stage-1 → upstream:epic-74519
+
+---
+
+STEP 2 — CREATE SECOND STAGE (STACKED)
+
+git checkout -b stage-2 stage-1
+git push -u origin stage-2
+
+CREATE PR:
+origin:stage-2 → origin:stage-1
+
+IMPORTANT:
+- This PR is created in your fork (origin)
+- NOT against upstream
+- This keeps stage-2 changes separate from stage-1
+
+---
+
+STEP 3 — MORE STACKING (OPTIONAL)
+
+git checkout -b stage-3 stage-2
+git push -u origin stage-3
+
+CREATE PR:
+origin:stage-3 → origin:stage-2
+
+---
+
+STEP 4 — WHEN LOWER PR MERGES
+
+Example: stage-1 merges into upstream/epic-74519
+
+git fetch upstream
+git checkout stage-2
+git rebase upstream/epic-74519
+git push --force-with-lease
+
+THEN CHANGE PR BASE:
+origin:stage-2 → upstream:epic-74519
+
+---
+
+STEP 5 — SYNC YOUR FORK (OCCASIONAL)
+
+Only do this if:
+- starting new work from epic-74519
+- GitHub says your branch is out of date
+- you maintain a local epic-74519 branch
+
+git fetch upstream
+git checkout epic-74519
+git reset --hard upstream/epic-74519
+git push --force-with-lease origin epic-74519
+
+---
+
+WHEN YOU CAN SKIP STEP 5
+
+git fetch upstream
+git rebase upstream/epic-74519
+
+---
+
+MENTAL MODEL
+
+upstream/epic-74519
+  └─ stage-1   (PR → upstream)
+       └─ stage-2   (PR → stage-1 in origin)
+            └─ stage-3   (PR → stage-2 in origin)
+
+---
+
+KEY RULE
+
+While parent PR is open:
+  PR goes to your fork (origin)
+
+After parent PR merges:
+  PR retargets to upstream
