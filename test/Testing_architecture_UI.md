@@ -31,6 +31,47 @@ Visual ownership principle:
 
 ---
 
+# StyleBI Implementation State
+
+This section records the current state of StyleBI's implementation of this architecture, established through epic-70095. Generic guidance in the rest of this document applies; the decisions below are the StyleBI-specific anchors.
+
+**Layer status:**
+
+| Layer | Current State | Plan |
+|---|---|---|
+| Layer 1 — Unit tests (Vitest) | ~346 specs exist as Jest — migration to Vitest pending | Complete Layer 1 coverage first before expanding to Layers 2 and 3 |
+| Layer 2 — Playwright E2E | Zero | portal2026 golden paths after Layer 1 migration; composer2026 after shell stabilizes |
+| Layer 3 — Stagehand AI-driven | Zero | Set up for ~15-20 Composer workflows before composer2026 redesign begins |
+
+**Established naming conventions (epic-70095):**
+
+| Pattern | Layer | When to use |
+|---|---|---|
+| `feature.component.tl.spec.ts` | Layer 1 | Component/template tests with Angular Testing Library + Material stubs |
+| `feature.service.spec.ts` | Layer 1 | Pure service or utility logic |
+| `feature.service.logic.spec.ts` | Layer 1 | Logic-only slice of a Tier 3 complex service |
+| `feature.service.scene.spec.ts` | Layer 1 | Integration/scene slice of a Tier 3 complex service |
+| `workflow-name.spec.ts` | Layer 2 | Playwright deterministic golden-path workflow |
+| `workflow-name.image.spec.ts` | Visual | Visual companion spec for a workflow state |
+| `workflow-name.flow.ts` | Shared | Shared setup helper reused by functional and visual specs |
+
+**Shared test infrastructure (epic-70095):**
+- `MaterialTestingModule` — EM component test module; use in all EM `.tl.spec.ts`
+- `audit-test-utils.ts` — `MatSelectStub` and `makeErrorServiceMock()` factory
+
+**Project structure:**
+
+```
+web/projects/portal/      ← Portal + Composer Angular project
+web/projects/em/          ← Enterprise Manager Angular project
+web/projects/shared/      ← Shared Angular library (near-complete Layer 1 coverage)
+web/projects/elements/    ← Elements library (complete)
+web/tests/e2e/            ← Layer 2 Playwright specs (to be established)
+web/tests/page-objects/   ← POMs (to be established)
+```
+
+---
+
 # Recommended Architecture View
 
 The cleanest representation is to organize the UI testing architecture by test type first, then distinguish:

@@ -36,6 +36,38 @@ In practice:
 
 ---
 
+## StyleBI-Specific Conventions
+
+The following conventions are established for the StyleBI project and take precedence over generic examples in this roadmap.
+
+**Project structure** — Angular projects live under `web/projects/` in the stylebi repo:
+
+| Project | Path | Notes |
+|---|---|---|
+| Portal + Composer | `web/projects/portal/` | Composer lives at `portal/src/app/composer/`; shared VS objects at `portal/src/app/vsobjects/` |
+| Enterprise Manager | `web/projects/em/` | |
+| Shared | `web/projects/shared/` | |
+| Elements | `web/projects/elements/` | Near-complete coverage |
+
+**Established file naming (from epic-70095):**
+
+| Pattern | When to use |
+|---|---|
+| `feature.component.tl.spec.ts` | Component/template tests using Angular Testing Library + Material stubs |
+| `feature.service.spec.ts` | Pure service or utility logic tests |
+| `feature.service.logic.spec.ts` | Logic-only slice of a Tier 3 complex service |
+| `feature.service.scene.spec.ts` | Integration/scene slice of a Tier 3 complex service |
+
+**Shared test infrastructure (from epic-70095):**
+- `MaterialTestingModule` — central Material module re-export for EM component tests; use in every EM `.tl.spec.ts` instead of listing Material imports manually
+- `audit-test-utils.ts` — provides `MatSelectStub` (ControlValueAccessor stub) and `makeErrorServiceMock()` factory
+
+**Service extraction pattern** — HTTP logic must be extracted from components into dedicated services before writing component tests (e.g. `ScheduleTaskEditorDataService` extracted from `ScheduleTaskEditorPageComponent`). The service `spec.ts` owns HTTP logic; the `.tl.spec.ts` owns component template behavior. Use `TimerService` abstraction for any component with `setTimeout`-based behavior.
+
+**Test runner** — migrating from Jest 28 to Vitest. All new specs must be written for Vitest (`vi.fn()`, `vi.spyOn()`, `vi.mock()`). See the epic-70095 test strategy for the migration plan.
+
+---
+
 ## Scope & Boundaries
 
 This roadmap is specifically for unit, service, and isolated component test authoring.

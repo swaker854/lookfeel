@@ -27,6 +27,58 @@ This roadmap assumes the architecture principle:
 
 ---
 
+## StyleBI-Specific Conventions
+
+The following conventions are established for the StyleBI project and take precedence over generic examples in this roadmap.
+
+**Project structure** — Angular projects under `web/projects/` in the stylebi repo. E2E tests live outside the Angular projects in a dedicated directory (to be established):
+
+| Path | Purpose |
+|---|---|
+| `web/tests/e2e/` | Playwright workflow specs (`*.spec.ts`) |
+| `web/tests/e2e/visual/` | Visual companion specs (`*.image.spec.ts`) |
+| `web/tests/e2e/visual/snapshots/` | Approved baseline images |
+| `web/tests/page-objects/` | Page Object Models (POMs) |
+
+**portal2026 vs composer2026 write-now vs defer:**
+
+| Area | Action | Reason |
+|---|---|---|
+| portal2026 golden paths | **Write now** | CSS-only redesign — selectors and DOM hierarchy unchanged |
+| composer2026 golden paths | **Defer** | Full component tree rearchitecture makes selectors brittle until shell stabilizes |
+| Composer workflows during redesign | **Stagehand Layer 3** | Semantic intent survives structural churn; see Layer 3 in epic-70095 strategy |
+
+**portal2026 P0 golden paths (starting targets):**
+
+| Workflow | Navigation Success | UI Success | Network Success |
+|---|---|---|---|
+| Login → Portal home | `/portal` | Dashboard list visible | `200 OK` |
+| Open viewsheet | `/portal/tab/dashboard/vs` | Viewsheet canvas renders | `200 OK` |
+| Run report | Stays on viewsheet | Report output visible | `200 OK` |
+| Export data | Modal → file download | Download started | `200 OK` |
+| Create new viewsheet | `/composer` | Blank canvas visible | `200 OK` |
+
+**`CLAUDE.md` template for StyleBI E2E:**
+
+```md
+# Project Context: StyleBI Playwright E2E
+
+- Stack: Angular 15, Bootstrap, Playwright, TypeScript
+- Locator strategy: prioritize `page.getByRole()`, `page.getByLabel()`, `page.getByTestId()`
+- Constraint: avoid brittle CSS selectors or deep DOM nesting
+- Verification: always use Playwright MCP tools to verify selectors against the live DOM before saving code
+- Scope: workflow-first E2E tests — golden-path user journeys, not one-test-per-component
+- portal2026 E2E: write now (CSS-only redesign, stable selectors)
+- composer2026 E2E: defer until composer2026 shell stabilizes
+- Project structure:
+  - POMs: `web/tests/page-objects/`
+  - Functional workflow specs: `web/tests/e2e/`
+  - Visual workflow companion specs: `web/tests/e2e/visual/`
+  - Visual baseline snapshots: `web/tests/e2e/visual/snapshots/`
+```
+
+---
+
 ## Scope & Boundaries
 
 This roadmap is specifically for deterministic E2E workflow authoring.
