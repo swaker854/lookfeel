@@ -168,6 +168,14 @@ Shared foundations should include:
 
 Layer-specific tokens should be allowed where needed.
 
+Shared shell controls should also follow a strict emphasis hierarchy:
+
+- one primary action per visible scope
+- secondary actions used sparingly
+- most local, toolbar, subsection, and helper actions treated as ghost controls
+
+This keeps the shell quiet and legible while still making the main action obvious.
+
 ## Shell-To-Visualization Token Contract
 
 Visualization should inherit from shell:

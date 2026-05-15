@@ -294,6 +294,13 @@ The shell should use light elevation.
 - Danger: semantic destructive button
 - Ghost/icon: minimal chrome, hover fill only
 
+Use emphasis intentionally:
+
+- exactly one primary action per visible scope
+- if two actions feel equally important, neither should be primary
+- secondary actions should be used sparingly so they do not compete with the primary action
+- most shell actions should usually be ghost or ghost/icon controls
+
 ### Button specs
 
 | Token area | Guidance |
@@ -304,11 +311,29 @@ The shell should use light elevation.
 | Font | `12px`, `500` |
 | Border | `1px` |
 
+Role guidance:
+
+- `Primary` (`solid accent`)
+  - reserve for the single most important action a user can take on that surface right now
+  - common examples: save, create, confirm, finish
+- `Secondary` (`outlined`)
+  - use for actions that still need visible emphasis, but are not the headline action
+  - common examples: add, connect, refresh, move, clear, chooser/open-browser actions
+- `Default` / `Ghost`
+  - use for local controls inside subsections, toolbars, list/table controls, inline field actions, and secondary navigation
+  - multiple ghost actions on a surface are normal
+- `Danger`
+  - reserve for destructive actions that need explicit semantic emphasis
+  - use the semantic danger family rather than neutral shell treatments
+- `Ghost/icon`
+  - use for row actions, toolbar icon buttons, and minimal chrome actions where hover state provides the affordance
+
 ### Button behavior
 
 - Primary buttons use shell primary.
 - Secondary and default buttons should use neutral control tokens.
-- Only danger buttons should use strong red as a routine fill.
+- Ghost and ghost/icon buttons should be the dominant button style by count on most screens.
+- Danger buttons should use the semantic danger family for text, border, and surface treatment rather than neutral shell tokens.
 - Icon buttons should usually be borderless until hover or focus.
 
 ## Inputs And Selects
