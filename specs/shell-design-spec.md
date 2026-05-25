@@ -300,6 +300,10 @@ Use emphasis intentionally:
 - if two actions feel equally important, neither should be primary
 - secondary actions should be used sparingly so they do not compete with the primary action
 - most shell actions should usually be ghost or ghost/icon controls
+- when a screen has no secondary action, review non-primary actions within each meaningful cluster or subsection
+- prerequisite or unlock actions can outrank subsection-local create actions when choosing a secondary
+- if one action in a cluster clearly stands above its neighboring ghost actions, it may be promoted to secondary
+- do not force a single secondary across unrelated subsections of the same screen
 
 ### Button specs
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+
+  <!-- Kidney contour shape bottom-left -->
+  <path d="M2 17 Q2 12 6 11 Q9 10 10 13 Q11 15 9 17 Q7 19 5 19 Q2 19 2 17 z" />
+
+  <!-- Map pin top-right -->
+  <path d="M16 2 Q20 2 20 6 Q20 10 16 13 Q12 10 12 6 Q12 2 16 2 z" />
+  <circle cx="16" cy="6" r="1.5" fill="currentColor" stroke="none" />
+
+</svg>

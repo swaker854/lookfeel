@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-formula-sort-descending">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <!-- down arrow -->
+  <path d="M4 4v14" />
+  <path d="M1 15l3 4l3 -4" />
+  <!-- three bars, long to short top to bottom -->
+  <line x1="10" y1="6"  x2="21" y2="6" />
+  <line x1="10" y1="12" x2="17" y2="12" />
+  <line x1="10" y1="18" x2="13" y2="18" />
+  <!-- formula f bottom right -->
+  <path d="M21 21 V15.5 Q21 13.5 23 13.5" />
+  <line x1="19" y1="18" x2="23" y2="18" />
+</svg>

@@ -1,0 +1,557 @@
+icon_name,category,tabler_equivalent,match_quality,notes
+OBJ,Components,box,Close,Generic object
+SAP,Brand,brand-sap,Custom,Keep as custom logo
+SOAP,Brand,api,Close,Or custom
+TXT,File types,file-type-txt,Direct,
+XML,File types,file-type-xml,Direct,
+account,Universal UI,user-circle,Direct,
+account-key,Universal UI,user-shield,Close,Tabler has user-shield/user-cog; Material's 'account+key' combo is custom
+add,Universal UI,plus,Direct,
+adhoc,BI-specific,table-options,Close,Ad-hoc query/table
+ai-assistant,Universal UI,sparkles,Direct,Or 'wand' / 'brand-openai'
+alert,Status,alert-triangle,Direct,
+alert-circle,Status,alert-circle,Direct,
+align-bottom,Layout,layout-align-bottom,Direct,
+align-center,Layout,layout-align-center,Direct,
+align-left,Layout,layout-align-left,Direct,
+align-middle,Layout,layout-align-middle,Direct,
+align-right,Layout,layout-align-right,Direct,
+align-text-bottom,Layout,align-box-bottom-center,Close,
+align-text-center,Text formatting,align-center,Direct,
+align-text-left,Text formatting,align-left,Direct,
+align-text-middle,Text formatting,align-center,Close,Vertical center variant
+align-text-right,Text formatting,align-right,Direct,
+align-text-top,Text formatting,align-box-top-center,Close,
+align-top,Layout,layout-align-top,Direct,
+annotation,Annotation,message-circle,Direct,
+annotation-empty,Annotation,message,Close,Empty bubble
+annotation-no,Annotation,message-off,Direct,
+annotation-outline,Annotation,message-2,Close,
+archive,Universal UI,archive,Direct,
+archive-open,Universal UI,archive,Close,Tabler archive is closed; open variant custom
+arrow-left-circle-outline,Navigation,arrow-left-circle,Direct,
+arrow-left-circle-outline-skip,Navigation,player-skip-back,Close,
+arrow-right-circle-outline,Navigation,arrow-right-circle,Direct,
+arrow-right-circle-outline-skip,Navigation,player-skip-forward,Close,
+assets,BI-specific,box-multiple,Close,Generic 'assets' — could also use 'apps'
+auditing,BI-specific,clipboard-check,Close,
+auto-chart-type,BI-specific,wand,Close,'Auto' magic — pair w/ chart icon
+auto-complete,BI-specific,text-suggestion,Close,
+auto-complete-click,BI-specific,cursor-text,Close,Custom — autocomplete with click
+auto-fix,Universal UI,wand,Direct,
+auto-join,Data model,affiliate,Close,Custom — auto join indicator
+auto-reload,Universal UI,rotate-clockwise-2,Close,Refresh + auto badge
+axis,BI-specific,axis-x,Direct,Or axis-y
+axis-dimension,BI-specific,axis-x,Close,Custom — axis w/ dimension marker
+backward,Navigation,player-track-prev,Direct,
+backward-fast,Navigation,player-skip-back,Direct,
+bare-arrow-down,Navigation,chevron-down,Direct,
+bare-arrow-left,Navigation,chevron-left,Direct,
+bare-arrow-right,Navigation,chevron-right,Direct,
+bare-arrow-up,Navigation,chevron-up,Direct,
+book,Universal UI,book,Direct,
+bookmark,Bookmarks,bookmark,Direct,
+bookmark-default,Bookmarks,bookmark-filled,Direct,
+bookmark-folder,Bookmarks,folder-star,Close,Custom — bookmark folder
+bookmark-home,Bookmarks,home-bookmark,Close,Custom variant
+bookmark-set-default,Bookmarks,bookmark-plus,Close,
+books,Universal UI,books,Direct,
+boolean-field,Field types,toggle-left,Close,Custom — boolean badge
+border-bottom,Format,border-bottom,Direct,
+border-left,Format,border-left,Direct,
+border-right,Format,border-right,Direct,
+border-top,Format,border-top,Direct,
+brush,Format,brush,Direct,
+brush-no,Format,brush-off,Direct,
+button,Components,square-rounded,Close,UI element — custom
+calculated-detail-field,Field types,math-function,Close,Custom
+calculated-sum-field,Field types,sigma,Close,Custom — sum field
+calendar,Calendar,calendar,Direct,
+calendar-double,Calendar,calendar-stats,Close,Custom — 2 calendars
+calendar-minus,Calendar,calendar-minus,Direct,
+calendar-plus,Calendar,calendar-plus,Direct,
+cancel,Universal UI,ban,Direct,
+card-text-outline,Universal UI,article,Close,
+chart,Chart types,chart-bar,Direct,Generic chart
+chart-3D-bar,Chart types,chart-bar,Custom,No 3D variant
+chart-3D-bar-stacked,Chart types,chart-bar,Custom,No 3D variant in Tabler
+chart-3D-pie,Chart types,chart-pie-3,Close,Tabler has chart-pie-2/3
+chart-area,Chart types,chart-area,Direct,
+chart-area-stacked,Chart types,chart-area-line,Close,Custom — stacked area
+chart-bar,Chart types,chart-bar,Direct,
+chart-bar-stacked,Chart types,chart-bar,Custom,Tabler has no stacked-bar; custom
+chart-boxplot,Chart types,chart-candle,Custom,"Closest, but boxplot is distinct"
+chart-bubble,Chart types,chart-bubble,Direct,
+chart-bullet,Chart types,chart-bullet,Custom,Not in Tabler — custom
+chart-candle,Chart types,chart-candle,Direct,
+chart-circle-network,Chart types,affiliate,Custom,Network/graph — custom
+chart-circle-pack,Chart types,circles,Custom,Custom
+chart-donut,Chart types,chart-donut,Direct,
+chart-funnel,Chart types,chart-funnel,Direct,
+chart-gantt,Chart types,chart-gantt,Custom,Tabler may not have; verify
+chart-icicle,Chart types,layout-board,Custom,Custom
+chart-interval,Chart types,chart-arcs-3,Custom,Custom
+chart-jump,Chart types,chart-dots,Custom,Custom
+chart-line,Chart types,chart-line,Direct,
+chart-line-stacked,Chart types,chart-line,Custom,Custom — stacked line
+chart-map,Chart types,map-2,Close,
+chart-map-contour,Chart types,topology-star,Custom,Custom
+chart-mekko,Chart types,chart-mekko,Custom,Not in Tabler — custom
+chart-multi-style,Chart types,chart-grid-dots,Custom,Custom
+chart-network,Chart types,affiliate,Custom,Or use 'graph'
+chart-pareto,Chart types,chart-bar-popular,Close,Bar + line
+chart-pie,Chart types,chart-pie,Direct,
+chart-radar,Chart types,chart-radar,Direct,
+chart-radar-filled,Chart types,chart-radar,Custom,Tabler radar is outline only; filled = custom
+chart-scatter-contour,Chart types,chart-dots,Custom,Custom
+chart-scattered,Chart types,chart-dots,Close,
+chart-scattered-stacked,Chart types,chart-dots,Custom,Custom
+chart-size,Chart types,chart-bubble,Close,Sizing glyph — custom
+chart-step,Chart types,chart-line,Custom,Step variant — custom
+chart-step-area,Chart types,chart-area,Custom,Custom
+chart-step-area-stacked,Chart types,chart-area,Custom,Custom
+chart-step-stacked,Chart types,chart-line,Custom,Custom
+chart-stock,Chart types,chart-candle,Close,
+chart-sunburst,Chart types,chart-arcs,Close,Tabler chart-arcs is closest
+chart-tree,Chart types,binary-tree,Close,Or 'hierarchy'
+chart-treemap,Chart types,chart-treemap,Direct,
+chart-waterfall,Chart types,chart-bar,Custom,Waterfall — custom
+checkbox,Selection,square-check,Direct,
+checkbox-blank-circle,Selection,circle,Direct,
+chevron-circle-arrow-down,Navigation,circle-chevron-down,Direct,
+chevron-circle-arrow-left,Navigation,circle-chevron-left,Direct,
+chevron-circle-arrow-right,Navigation,circle-chevron-right,Direct,
+chevron-circle-arrow-up,Navigation,circle-chevron-up,Direct,
+chevron-circle-up-down,Navigation,circle-arrows-vertical,Close,
+clock,Universal UI,clock,Direct,
+close,Universal UI,x,Direct,
+close-circle,Universal UI,circle-x,Direct,
+code-tags-check,Code,code,Close,Code + check — close enough
+collapse,Layout,layout-sidebar-left-collapse,Close,Or 'arrows-minimize'
+color-fill,Format,color-swatch,Close,Or 'paint-filled'
+column,Data model,columns-3,Direct,
+column-select,Data model,column-insert-right,Close,Custom
+column-selection,Data model,columns,Close,
+compare,Universal UI,arrows-diff,Close,
+composer,BI-specific,layout-grid,Custom,Composer = page builder; custom
+composite-table,Data model,table-share,Custom,Custom
+concat,Data model,layers-union,Close,Concatenate tables
+condition,Data model,filter,Close,
+condition-with-query,Data model,filter-question,Custom,Custom — filter + query
+condition-with-variable,Data model,filter-cog,Custom,Custom
+console,Code,terminal-2,Direct,
+content-duplicate,Universal UI,copy,Direct,
+contract,Universal UI,arrows-minimize,Direct,
+copy,Universal UI,copy,Direct,
+creation,Universal UI,wand,Close,Or 'sparkles'
+cross-join,Data model,table-share,Custom,Custom — join icon
+crosstab,BI-specific,table,Custom,Custom — crosstab table
+crosstab-column-header,BI-specific,layout-columns,Custom,Custom — crosstab
+crosstab-row-header,BI-specific,layout-rows,Custom,Custom
+cube,Data model,cube,Direct,
+cursor-default,Universal UI,pointer,Direct,
+customize,Universal UI,settings-2,Close,Or 'adjustments'
+cut,Universal UI,scissors,Direct,
+data-block-type-bound,BI-specific,link,Custom,Custom — data block
+data-block-type-concat,BI-specific,layers-union,Custom,Custom
+data-block-type-join,BI-specific,table-share,Custom,Custom
+data-block-type-mirror,BI-specific,layout-bottombar-inactive,Custom,Mirror — custom
+data-block-type-mv,BI-specific,server,Custom,Materialized view — custom
+data-block-type-query,BI-specific,table-options,Custom,Custom
+data-block-type-rotated,BI-specific,rotate-rectangle,Custom,Custom
+data-cache,Data model,database-cog,Close,
+data-full,Data model,database,Custom,Full data indicator — custom
+data-partial,Data model,database-import,Custom,Custom
+data-source-folder,Data model,folder-share,Close,
+data-sources,Data model,database-share,Close,
+data-table,Data model,table,Direct,
+database,Data model,database,Direct,
+database-check,Data model,database-cog,Close,
+database-plus,Data model,database-plus,Direct,
+date-field,Field types,calendar,Close,Custom — field badge
+date-range,Calendar,calendar-week,Close,
+datetime-field,Field types,calendar-clock,Close,Custom
+db-model,Data model,schema,Close,
+db-table,Data model,table,Direct,
+decimal-decrease,Format,decimal,Custom,Custom
+decimal-increase,Format,decimal,Custom,Custom
+delete-relation,Data model,unlink,Direct,
+dimension,BI-specific,triangle-square-circle,Custom,Tabler has shapes — combine
+dimension-setting,BI-specific,triangle-square-circle,Custom,Custom
+distribute-H,Layout,layout-distribute-horizontal,Direct,
+distribute-V,Layout,layout-distribute-vertical,Direct,
+distribute-bottom,Layout,layout-distribute-vertical,Close,
+distribute-center,Layout,layout-distribute-horizontal,Close,
+distribute-horizontal,Layout,layout-distribute-horizontal,Direct,
+distribute-left,Layout,layout-distribute-vertical,Close,
+distribute-middle,Layout,layout-distribute-horizontal,Close,
+distribute-right,Layout,layout-distribute-vertical,Close,
+distribute-top,Layout,layout-distribute-vertical,Close,
+distribute-vertical,Layout,layout-distribute-vertical,Direct,
+divider-horizontal,Layout,separator-horizontal,Direct,
+divider-vertical,Layout,separator-vertical,Direct,
+double-axis,BI-specific,arrows-double-ne-sw,Custom,Custom — dual axis
+downward,Navigation,arrow-down,Direct,
+downward-fast,Navigation,player-skip-forward,Close,Rotated
+drill-down,BI-specific,zoom-in-area,Close,Custom — common
+drill-down-filter,BI-specific,zoom-in-area,Custom,Custom — drill + filter
+drill-filter,BI-specific,filter,Custom,Custom
+drill-up,BI-specific,zoom-out-area,Close,Custom
+drill-up-filter,BI-specific,zoom-out-area,Custom,Custom
+dropdown-box,Components,select,Direct,
+edit,Universal UI,edit,Direct,Or 'pencil'
+edit-print,Universal UI,printer-cog,Custom,Edit print settings — custom
+email,Universal UI,mail,Direct,
+embedded-table,BI-specific,table-row,Custom,Custom
+enter-parameter,BI-specific,parameter,Close,Or 'cursor-text'
+enterprise-manager,BI-specific,building,Close,Or 'shield-cog'
+equal-sign,Format,equal,Direct,
+eraser,Format,eraser,Direct,
+expand,Universal UI,arrows-maximize,Direct,
+export,Universal UI,file-export,Direct,
+extra,Universal UI,dots,Close,
+eye,Universal UI,eye,Direct,
+eye-off,Universal UI,eye-off,Direct,
+eye-plus,Universal UI,eye-plus,Direct,
+feature-search,BI-specific,zoom-code,Close,Custom — feature search
+field-list,BI-specific,list,Custom,Custom — field list
+field-script,Field types,script,Close,
+field-tree,Field types,hierarchy-3,Close,
+file,Universal UI,file,Direct,
+file-csv,File types,file-type-csv,Direct,
+file-html,File types,file-type-html,Direct,
+file-multiple,Universal UI,files,Direct,
+file-pdf,File types,file-type-pdf,Direct,
+file-pdf2,File types,file-type-pdf,Direct,Duplicate — consider dropping one
+file-plus,Universal UI,file-plus,Direct,
+file-ppt,File types,file-type-ppt,Direct,
+file-rtf,File types,file-type-rtf,Direct,
+file-sql,File types,file-type-sql,Direct,
+file-svg,File types,file-type-svg,Direct,
+file-txt,File types,file-type-txt,Direct,
+file-xgm,File types,file-type-xml,Custom,XGM is custom — proprietary
+file-xls,File types,file-type-xls,Direct,
+file-xml,File types,file-type-xml,Direct,
+folder,Folders,folder,Direct,
+folder-account,Folders,folder-user,Close,Or 'folder' + user badge
+folder-move,Folders,folder-symlink,Close,
+folder-open,Folders,folder-open,Direct,
+folder-plus,Folders,folder-plus,Direct,
+folder-remove,Folders,folder-minus,Direct,
+folder-toolbox,Folders,folder-cog,Close,
+format,Text formatting,text-size,Close,
+format-align-justify,Text formatting,align-justified,Direct,
+format-area-break,Format,layout-rows,Custom,Custom
+format-bold,Text formatting,bold,Direct,
+format-color-text,Text formatting,text-color,Close,Or 'palette'
+format-columns,Text formatting,columns,Direct,
+format-conditional-page-break,Format,page-break,Custom,Custom
+format-indent-decrease,Text formatting,indent-decrease,Direct,
+format-indent-increase,Text formatting,indent-increase,Direct,
+format-italic,Text formatting,italic,Direct,
+format-list-numbers,Text formatting,list-numbers,Direct,
+format-page-break,Format,page-break,Close,
+format-painter,Text formatting,brush,Close,
+format-pilcrow,Text formatting,pilcrow,Direct,
+format-underline,Text formatting,underline,Direct,
+formula,BI-specific,math-function,Close,
+formula-condition,BI-specific,math-symbols,Custom,Custom
+formula-edit,BI-specific,math-function,Close,
+formula-sort-ascending,BI-specific,sort-ascending-numbers,Custom,Custom
+formula-sort-descending,BI-specific,sort-descending-numbers,Custom,Custom
+formula-table,BI-specific,math-function,Custom,Custom
+forward,Navigation,player-track-next,Direct,
+forward-fast,Navigation,player-skip-forward,Direct,
+function-and-variable,BI-specific,math-x-divide-y-2,Close,Custom
+gauge,Components,gauge,Direct,
+geo-field,Field types,map-pin,Direct,
+geo-field-error,Field types,map-pin-x,Close,
+geo-mapped,BI-specific,map-pin-check,Close,
+geo-not-mapped,BI-specific,map-pin-off,Direct,
+grid,Layout,grid-pattern,Direct,
+grouping,BI-specific,layout-grid-add,Close,
+help-question-mark,Universal UI,help,Direct,
+highlight,Format,highlight,Direct,
+home,Universal UI,home,Direct,
+image,Components,photo,Direct,
+image-area,Components,photo,Close,
+inetsoft,Brand,brand,Custom,Logo — keep custom
+inetsoft-full,Brand,brand,Custom,Logo — keep custom
+info,Status,info-circle,Direct,
+inner-join,Data model,join-bevel,Custom,SQL join visualizations — custom
+intersect-tables,Data model,layers-intersect,Direct,
+javascript,Code,brand-javascript,Direct,
+join,Data model,join,Direct,
+keyboard-return,Universal UI,arrow-back,Direct,
+keyboard-tab,Universal UI,indent-increase,Close,
+layout,Layout,layout,Direct,
+line,Format,line,Direct,
+loading,Status,loader-2,Direct,
+lock,Universal UI,lock,Direct,
+logical-formula,BI-specific,logic-and,Close,
+logical-model,BI-specific,schema,Close,
+login,Universal UI,login,Direct,
+logout,Universal UI,logout,Direct,
+materialized-viewsheet,BI-specific,layout-dashboard,Custom,Custom
+materialized-worksheet,BI-specific,table,Custom,Custom
+max-height,Layout,arrows-vertical,Close,
+max-width,Layout,arrows-horizontal,Close,
+maximize,Universal UI,maximize,Direct,
+measure,BI-specific,ruler,Close,Or 'ruler-measure'
+measure-setting,BI-specific,ruler-measure,Custom,Custom
+menu-horizontal,Universal UI,menu-2,Direct,
+menu-sandwich,Universal UI,menu-2,Direct,
+menu-vertical,Universal UI,dots-vertical,Direct,
+merge-join,Data model,git-merge,Close,
+message,Universal UI,message,Direct,
+message-error,Status,message-circle-x,Close,
+message-warning,Status,message-circle-exclamation,Close,
+min-height,Layout,arrows-vertical,Close,Min variant
+min-width,Layout,arrows-horizontal,Close,Min variant
+minus-box-outline,Universal UI,square-minus,Direct,
+minus-tables,Data model,layers-subtract,Close,
+mirror,Layout,flip-horizontal,Direct,
+mobile,Components,device-mobile,Direct,
+move,Universal UI,arrows-move,Direct,
+multi-chart,BI-specific,layout-grid,Close,
+named-group,BI-specific,tag,Close,
+new-logical-model,BI-specific,schema,Custom,Logical model + new badge
+new-objects,Universal UI,plus,Custom,Custom — new objects glyph
+new-partition,BI-specific,plus,Custom,Custom
+new-report,BI-specific,file-plus,Close,
+new-viewsheet,BI-specific,layout-dashboard,Custom,Custom — new viewsheet
+new-vpm,BI-specific,shield-plus,Custom,Custom
+new-worksheet,BI-specific,table-plus,Close,
+null,Status,circle-dashed,Close,
+num-range,Field types,number-123,Close,
+number-field,Field types,number,Close,Custom — number badge
+numeric,Field types,number-123,Direct,
+order-column,Data model,arrows-sort,Close,
+other-join,Data model,join,Custom,Custom
+outer-join,Data model,join-bevel,Custom,Custom — outer join
+oval,Shapes,oval,Direct,
+page,Universal UI,file,Direct,
+page-body,Layout,layout,Custom,Custom
+page-footer,Layout,layout-bottombar,Direct,
+page-header,Layout,layout-navbar,Direct,
+page-layout,Layout,layout,Direct,
+page-setting,Universal UI,file-settings,Close,
+palette,Format,palette,Direct,
+partition,BI-specific,layout-board-split,Close,
+paste,Universal UI,clipboard,Direct,
+pending-submit,Status,clock-pause,Custom,Custom
+plus-box-outline,Universal UI,square-plus,Direct,
+preview,Universal UI,eye,Direct,
+printer,Universal UI,printer,Direct,
+printer-default,Universal UI,printer,Direct,
+printer-network,Universal UI,printer,Close,Network printer — custom badge
+private-report,BI-specific,file-shield,Close,
+private-viewsheet,BI-specific,layout-dashboard,Custom,Custom
+private-worksheet,BI-specific,table,Custom,Custom
+profile,Universal UI,user,Direct,
+query,Data model,database-search,Close,
+radio-button,Components,circle-dot,Direct,
+range-slider,Components,adjustments-horizontal,Close,
+recent,Universal UI,history,Direct,
+recent-outline,Universal UI,history,Direct,
+recommend,Universal UI,star,Close,
+rectangle,Shapes,rectangle,Direct,
+redo,Universal UI,arrow-forward-up,Direct,
+refresh,Universal UI,refresh,Direct,
+reload-no,Universal UI,refresh-off,Direct,
+rename,Universal UI,edit,Close,Or 'cursor-text'
+report,BI-specific,file-description,Close,
+report-adhoc,BI-specific,file-cog,Custom,Custom
+report-bean,BI-specific,file-code,Custom,Custom
+report-bursted,BI-specific,file-arrow-right,Custom,Custom
+report-edit,BI-specific,file-pencil,Direct,
+report-formula,BI-specific,file-text,Custom,Custom
+report-meta,BI-specific,file-info,Close,
+report-param-only,BI-specific,file-text,Custom,Custom
+report-pregenerated,BI-specific,file-check,Close,
+report-replet,BI-specific,file-code-2,Custom,Custom
+report-wizard,BI-specific,file-stack,Custom,Custom
+reset,Universal UI,refresh-dot,Close,
+resize-bottom-right,Universal UI,resize,Close,
+rotate,Universal UI,rotate,Direct,
+save,Universal UI,device-floppy,Direct,
+save-as,Universal UI,device-floppy,Close,Or 'file-export'
+save-as-changed,Universal UI,device-floppy,Custom,Save-as w/ change badge
+save-changed,Universal UI,device-floppy,Custom,Custom
+save-close,Universal UI,device-floppy,Custom,Custom
+search,Universal UI,search,Direct,
+search-disable,Universal UI,search-off,Direct,
+search-next,Universal UI,search,Custom,Custom — search w/ next arrow
+search-result,Universal UI,zoom-check,Close,
+select-empty,Selection,square,Direct,
+select-empty-circle,Selection,circle,Direct,
+select-excluded,Selection,square-x,Close,
+select-excluded-circle,Selection,circle-x,Close,
+select-multi,Selection,checkbox,Close,
+select-other,Selection,square-dashed,Direct,
+select-other-circle,Selection,circle-dashed,Close,
+select-range,Selection,selector,Close,
+select-range-no,Selection,square-off,Close,
+select-single,Selection,square-check,Direct,
+selected,Selection,check,Direct,
+selected-auto,Selection,square-dot,Close,
+selected-auto-circle,Selection,circle-dot,Close,
+selected-circle,Selection,circle-check,Direct,
+selection,Components,pointer,Close,
+selection-container,Components,box-multiple,Close,
+selection-list,Components,list,Direct,
+selection-swap,Components,switch,Direct,
+selection-tree,Components,binary-tree,Direct,
+separate-chart,BI-specific,chart-bar,Custom,Custom
+server-file,BI-specific,server,Close,
+setting,Universal UI,settings,Direct,
+shape-L,Shapes,letter-l,Close,
+shape-V,Shapes,letter-v,Close,
+shape-V-rotate,Shapes,letter-v,Custom,Rotated V
+shape-arrow-down-bold,Shapes,arrow-big-down,Direct,
+shape-arrow-lower-right,Shapes,arrow-down-right,Direct,
+shape-arrow-up-bold,Shapes,arrow-big-up,Direct,
+shape-arrow-upper-right,Shapes,arrow-up-right,Direct,
+shape-asterisk,Shapes,asterisk,Direct,
+shape-cancel,Shapes,ban,Direct,
+shape-check,Shapes,check,Direct,
+shape-circle,Shapes,circle,Direct,
+shape-cross,Shapes,x,Direct,
+shape-diamond,Shapes,diamond,Direct,
+shape-dodecagon,Shapes,polygon,Close,Custom — 12-sided
+shape-exclamation,Shapes,exclamation-mark,Direct,
+shape-face,Shapes,mood-neutral,Direct,
+shape-face-happy,Shapes,mood-happy,Direct,
+shape-face-sad,Shapes,mood-sad,Direct,
+shape-filled-25-circle,Shapes,circle-percentage,Custom,Custom — 25% fill
+shape-filled-50-circle,Shapes,circle-half-2,Direct,
+shape-filled-75-circle,Shapes,circle-percentage,Custom,Custom — 75% fill
+shape-filled-circle,Shapes,circle-filled,Direct,
+shape-filled-diamond,Shapes,diamond-filled,Direct,
+shape-filled-square,Shapes,square-filled,Direct,
+shape-filled-triangle,Shapes,triangle-filled,Direct,
+shape-flag,Shapes,flag,Direct,
+shape-hexagon,Shapes,hexagon,Direct,
+shape-horizontal-bar,Shapes,minus,Close,
+shape-light,Shapes,bulb,Direct,
+shape-line-dash0,Shapes,line-dashed,Custom,Custom — dash style 0
+shape-line-dash1,Shapes,line-dashed,Custom,Custom
+shape-line-dash2,Shapes,line-dashed,Custom,Custom
+shape-line-dash3,Shapes,line-dashed,Custom,Custom
+shape-line-dash4,Shapes,line-dashed,Custom,Custom
+shape-man,Shapes,man,Direct,
+shape-minus,Shapes,minus,Direct,
+shape-no,Shapes,forbid,Close,
+shape-octagon,Shapes,octagon,Direct,
+shape-pattern-L30-thick-dense,Patterns,pattern,Custom,Custom
+shape-pattern-L30-thick-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-L30-thin-dense,Patterns,pattern,Custom,Custom
+shape-pattern-L30-thin-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-L60-thick-dense,Patterns,pattern,Custom,Custom
+shape-pattern-L60-thick-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-L60-thin-dense,Patterns,pattern,Custom,Custom
+shape-pattern-L60-thin-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-R30-thick-dense,Patterns,pattern,Custom,Custom
+shape-pattern-R30-thick-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-R30-thin-dense,Patterns,pattern,Custom,Custom
+shape-pattern-R30-thin-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-R60-thick-dense,Patterns,pattern,Custom,Custom
+shape-pattern-R60-thick-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-R60-thin-dense,Patterns,pattern,Custom,Custom
+shape-pattern-R60-thin-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-cross-thick-dense,Patterns,pattern,Custom,16 pattern variants — all custom
+shape-pattern-cross-thick-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-cross-thin-dense,Patterns,pattern,Custom,Custom
+shape-pattern-cross-thin-sparse,Patterns,pattern,Custom,Custom
+shape-pattern-solid,Patterns,pattern,Custom,Custom
+shape-plus,Shapes,plus,Direct,
+shape-rectangle,Shapes,rectangle,Direct,
+shape-square,Shapes,square,Direct,
+shape-star,Shapes,star,Direct,
+shape-trapezium,Shapes,trapezium,Custom,Custom
+shape-triangle,Shapes,triangle,Direct,
+shape-vertical-bar,Shapes,separator-vertical,Close,
+shape-woman,Shapes,woman,Direct,
+shapes-lines,Shapes,line,Close,
+shapes-overview,Shapes,shape,Direct,
+shapes-patterns,Patterns,pattern,Custom,Custom
+shapes-points,Shapes,point,Close,
+share,Universal UI,share,Direct,
+share-facebook,Brand,brand-facebook,Direct,
+share-google-chat,Brand,brand-google,Close,Or custom
+share-hangouts,Brand,brand-hangouts,Direct,
+share-link,Universal UI,link,Direct,
+share-link-copy,Universal UI,link,Close,
+share-linkedin,Brand,brand-linkedin,Direct,
+share-slack,Brand,brand-slack,Direct,
+share-twitter,Brand,brand-twitter,Direct,
+shared-report,BI-specific,file-share,Close,
+shared-viewsheet,BI-specific,layout-dashboard,Custom,Custom
+shared-viewsheet-open,BI-specific,layout-dashboard,Custom,Custom
+shared-worksheet,BI-specific,table,Custom,Custom
+shared-worksheet-open,BI-specific,table,Custom,Custom
+show-detail,BI-specific,list-details,Close,
+show-summary,BI-specific,layout-sidebar,Close,
+single-chart,BI-specific,chart-bar,Close,
+slider,Components,adjustments-horizontal,Direct,
+snap-grid,Layout,grid-dots,Direct,
+snapshot,Universal UI,camera,Direct,
+sort,Universal UI,arrows-sort,Direct,
+sort-ascending,Universal UI,sort-ascending,Direct,
+sort-descending,Universal UI,sort-descending,Direct,
+sort-value-ascending,Universal UI,sort-ascending-numbers,Direct,
+sort-value-descending,Universal UI,sort-descending-numbers,Direct,
+spinner,Status,loader-2,Direct,
+square-edit-outline,Universal UI,edit,Direct,
+star,Universal UI,star-filled,Direct,
+star-outline,Universal UI,star,Direct,
+stop,Status,player-stop,Direct,
+style,Format,palette,Close,
+submit,Universal UI,send,Direct,
+summary,BI-specific,file-description,Close,
+summary-edit,BI-specific,file-pencil,Close,
+tab,Components,tabs,Direct,
+table,Data model,table,Direct,
+table-of-contents,Universal UI,list-numbers,Close,
+tabular-data,Data model,table,Direct,
+tabular-subquery,Data model,table-share,Close,
+text,Format,typography,Close,
+text-box,Components,text-recognition,Close,
+text-field,Field types,input,Close,
+text-input,Components,forms,Close,
+thumbnails,Layout,layout-grid,Direct,
+title-auto,Format,heading,Close,
+title-rotate-L45,Format,rotate-clockwise,Custom,Custom
+title-rotate-L90,Format,rotate-clockwise,Custom,Custom
+title-rotate-R45,Format,rotate-clockwise,Custom,Custom
+title-rotate-R90,Format,rotate-clockwise,Custom,Custom
+toolbar,Universal UI,toolbox,Close,
+trash,Universal UI,trash,Direct,
+undo,Universal UI,arrow-back-up,Direct,
+union-tables,Data model,layers-union,Direct,
+unpivot,Data model,table-row,Custom,Custom
+upload,Universal UI,upload,Direct,
+upward,Navigation,arrow-up,Direct,
+upward-fast,Navigation,player-skip-back,Close,Rotated
+user-group,Universal UI,users,Direct,
+user-organizations,Universal UI,building,Close,
+user-roles,Universal UI,user-shield,Direct,
+value-list,BI-specific,list,Close,
+value-type-list,BI-specific,list-search,Custom,Custom
+variable,BI-specific,variable,Direct,
+variable-with-query,BI-specific,variable,Custom,Custom
+view-detail-live,BI-specific,eye,Custom,Custom — live detail
+view-detail-meta,BI-specific,eye-cog,Custom,Custom
+view-grid,Layout,layout-grid,Direct,
+view-list,Layout,list,Direct,
+view-summary-live,BI-specific,eye,Custom,Custom
+view-summary-meta,BI-specific,eye-cog,Custom,Custom
+viewsheet,BI-specific,layout-dashboard,Custom,Core BI icon — hand-draw
+viewsheet-book,BI-specific,dashboard,Custom,Custom
+vpm,BI-specific,shield-check,Custom,Virtual private model — custom
+window-restore,Universal UI,window,Direct,
+worksheet,BI-specific,table,Custom,Core BI icon — hand-draw
+wrap,Format,text-wrap,Direct,
+zoom-in,Universal UI,zoom-in,Direct,
+zoom-no,Universal UI,zoom-cancel,Direct,
+zoom-out,Universal UI,zoom-out,Direct,

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-printer-edit">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M7 17h-2a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v1" />
+  <path d="M17 9v-4a2 2 0 0 0 -2 -2h-6a2 2 0 0 0 -2 2v4" />
+  <path d="M7 15a2 2 0 0 1 2 -2h4" />
+  <path d="M7 15v4a2 2 0 0 0 2 2h3" />
+  <path d="M18.42 15.61a2.1 2.1 0 1 1 2.97 2.97l-3.39 3.42h-3v-3l3.42 -3.39" />
+</svg>

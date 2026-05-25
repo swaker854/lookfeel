@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+
+  <polyline points="3,17 7,13 12,15 17,11 21,13" />
+  <polyline points="3,12 7,8  12,10 17,6  21,8"  />
+  <polyline points="3,7  7,4  12,6  17,3  21,4"  />
+
+</svg>

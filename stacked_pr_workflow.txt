@@ -28,7 +28,13 @@ git push -u origin stage-2
 
 Now you can do coding in stage-2 branch
 
-CREATE PR in Origin(the Fork):
+Whenever stage-1 changes meaningfully:
+
+git checkout stage-2
+git rebase stage-1
+git push --force-with-lease
+
+Optional(can wait for stage-2 rebased to upstream to create PR): CREATE PR in Origin(the Fork):
 origin:stage-2 → origin:stage-1
 
 IMPORTANT:
@@ -56,7 +62,8 @@ Example: stage-1 merges into upstream/epic-74519
 
 git fetch upstream
 git checkout stage-2
-git rebase upstream/epic-74519
+git branch backup/stage-2-before-rebase
+git rebase --onto upstream/epic-74519 stage-1 stage-2
 git push --force-with-lease
 
 THEN CHANGE PR BASE:

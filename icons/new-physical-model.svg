@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <!-- top rect -->
+  <rect x="8" y="2" width="8" height="4" rx="0.5" />
+  <!-- mid-left rect -->
+  <rect x="2" y="10" width="8" height="4" rx="0.5" />
+  <!-- mid-right rect -->
+  <rect x="14" y="10" width="8" height="4" rx="0.5" />
+  <!-- bottom-left rect -->
+  <rect x="2" y="18" width="8" height="4" rx="0.5" />
+  <!-- lines: top to mid-left -->
+  <line x1="9" y1="6" x2="6" y2="10" />
+  <!-- top to mid-right -->
+  <line x1="15" y1="6" x2="18" y2="10" />
+  <!-- mid-left to bottom-left -->
+  <line x1="6" y1="14" x2="6" y2="18" />
+  <!-- plus sign lower right -->
+  <line x1="20" y1="18" x2="20" y2="24" />
+  <line x1="17" y1="21" x2="23" y2="21" />
+</svg>

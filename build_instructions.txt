@@ -6,3 +6,13 @@ in web folder, npm run build:watch
 everyone - repository only
 advanced - repository + scheduler
 everyone + advanced - repository + pinboard + create->composer, not data source, but no scheduler
+
+
+date-value-editor.component.ts:
+
+https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson $.features
+clocify: ODEzYzIwMjgtZDYwNy00MGU1LWE5OTgtMDY3OGUxMDRiYTA1
+
+I found in composer->worksheet->conditions dialog with date type filter also uses this date picker. It doesn't pick up the new dialog either. Does that mean we need to find every place that use the 
+
+We built and integrated a shared custom-select in portal and converted a large batch of native <select> controls. currerntly sweeping the web/projects/share. We have got through web/projects/portal, web/projects/em is exluded. Please continue one UI area a time

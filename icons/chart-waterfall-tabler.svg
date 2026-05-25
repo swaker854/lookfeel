@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+
+  <!-- Bar1: x=3-10 (M3, 1px corner, h5, 1px corner = 3+1+5+1=10) -->
+  <path d="M3 13a1 1 0 0 1 1 -1h5a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1z" />
+
+  <!-- Bar2 floating: x=10-17, left=10 = bar1 right -->
+  <path d="M10 9a1 1 0 0 1 1 -1h5a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1z" />
+
+  <!-- Bar3 total: x=17-24 clipped to x=17-21, left=17 = bar2 right -->
+  <path d="M17 6a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1z" />
+
+  <!-- Dashed connector -->
+  <line x1="10" y1="14" x2="17" y2="14" stroke-dasharray="2 1" />
+
+</svg>
